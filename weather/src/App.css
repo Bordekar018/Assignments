@@ -25,4 +25,5 @@
   background: url(./uploads/Map.jpg);
   width: 100%;
   height: 100vh;
+  background-size: 100% 100%;
 }
