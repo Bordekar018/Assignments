@@ -1,9 +1,8 @@
 .box {
   text-align: center;
-  width: 5px;
-  height: 100px;
+  height: 50px;
   background: #094a75;
-  margin: 10px 25px;
+
   border-radius: 14px 14px 14px 14px;
   -moz-border-radius: 14px 14px 14px 14px;
   -webkit-border-radius: 14px 14px 14px 14px;
@@ -13,6 +12,5 @@
 }
 .content {
   text-align: center;
-  margin-top: 20px;
   color: #09d3ac;
 }
