@@ -13,15 +13,17 @@ export class DigitalClock extends Component {
     hours: new Date(),
     mins: new Date(),
     seconds: new Date(),
-    ampm: "am"
+    ampm: "pm"
   };
 
   getHrs() {
+    let a = 0;
     let Time = new Date();
     let hrs = Time.getHours();
-    hrs =
-      hrs > 12
-        ? this.setState({ hours: hrs - 12, ampm: "pm" })
+    hrs = hrs > 12 || hrs == 0;
+    a =
+      hrs - 12
+        ? this.setState({ hours: a, ampm: "am" })
         : this.setState({ hours: hrs });
   }
 
