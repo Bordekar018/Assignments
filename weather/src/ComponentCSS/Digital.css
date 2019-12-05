@@ -1,0 +1,18 @@
+.box {
+  text-align: center;
+  width: 5px;
+  height: 100px;
+  background: #094a75;
+  margin: 10px 25px;
+  border-radius: 14px 14px 14px 14px;
+  -moz-border-radius: 14px 14px 14px 14px;
+  -webkit-border-radius: 14px 14px 14px 14px;
+  -webkit-box-shadow: -1px 0px 17px -2px rgba(51, 149, 213, 1);
+  -moz-box-shadow: -1px 0px 17px -2px rgba(51, 149, 213, 1);
+  box-shadow: -1px 0px 17px -2px rgba(51, 149, 213, 1);
+}
+.content {
+  text-align: center;
+  margin-top: 20px;
+  color: #09d3ac;
+}

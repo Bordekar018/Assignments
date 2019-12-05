@@ -18,21 +18,13 @@ function App(props) {
         </div>
         <div className="row">
           <div className="col-sm-12 col-md-4 col-lg-4 " />
-          <div className="col-sm-12 col-md-4 col-lg-4 time">
-            <DigitalClock />
-          </div>
+          <div className="col-sm-12 col-md-4 col-lg-4 " />
           <div className="col-sm-12 col-md-4 col-lg-4" />
         </div>
         <div className="row">
           <div className="col-sm-12 col-md-4 col-lg-4 " />
           <div className="col-sm-12 col-md-4 col-lg-4 ">
-            <div className="row">
-              <div className="col-sm-12 col-md-2 col-lg-2 box">h</div>
-
-              <div className="col-sm-12 col-md-2 col-lg-2 box">h</div>
-              <div className="col-sm-12 col-md-2 col-lg-2 box">h</div>
-              <div className="col-sm-12 col-md-2 col-lg-2 box">h</div>
-            </div>
+            <DigitalClock />
           </div>
           <div className="col-sm-12 col-md-4 col-lg-4 " />
         </div>

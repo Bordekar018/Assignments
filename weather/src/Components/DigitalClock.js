@@ -44,16 +44,24 @@ export class DigitalClock extends Component {
 
   render() {
     return (
-      <div>
-        <h1>
-          {this.state.hours.toString()}
-        </h1>
-        <h1>
-          {this.state.mins.toString()}
-        </h1>
-        <h1>
-          {this.state.seconds.toString()}
-        </h1>
+      <div className="row">
+        <div className="col-sm-12 col-md-2 col-lg-2 box">
+          <h1 class="content">
+            {this.state.hours.toString()}
+          </h1>
+        </div>
+
+        <div className="col-sm-12 col-md-2 col-lg-2 box">
+          <h1 class="content">
+            {this.state.mins.toString()}
+          </h1>
+        </div>
+        <div className="col-sm-12 col-md-2 col-lg-2 box">
+          <h1 class="content">
+            {this.state.seconds.toString()}
+          </h1>
+        </div>
+        <div className="col-sm-12 col-md-2 col-lg-2 box">am</div>
       </div>
     );
   }

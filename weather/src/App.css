@@ -1,27 +1,3 @@
-.time {
-  text-align: center;
-  color: #09d3ac;
-  -webkit-box-shadow: -1px 0px 17px -2px rgba(51, 149, 213, 1);
-  -moz-box-shadow: -1px 0px 17px -2px rgba(51, 149, 213, 1);
-  box-shadow: -1px 0px 17px -2px rgba(51, 149, 213, 1);
-  border-radius: 14px 14px 14px 14px;
-  -moz-border-radius: 14px 14px 14px 14px;
-  -webkit-border-radius: 14px 14px 14px 14px;
-  margin-top: 10px;
-  background: #094a75;
-}
-
-.box {
-  text-align: center;
-  width: 5px;
-  height: 100px;
-  background: #094a75;
-  margin: 10px 25px;
-  border-radius: 14px 14px 14px 14px;
-  -moz-border-radius: 14px 14px 14px 14px;
-  -webkit-border-radius: 14px 14px 14px 14px;
-}
-
 .BackGround {
   background: url(./uploads/Map.jpg);
   width: 100%;
