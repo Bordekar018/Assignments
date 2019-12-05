@@ -12,22 +12,31 @@ export class DigitalClock extends Component {
   state = {
     hours: new Date(),
     mins: new Date(),
-    seconds: new Date()
+    seconds: new Date(),
+    ampm: "am"
   };
 
   getHrs() {
     let Time = new Date();
-    this.setState({ hours: Time.getHours() });
+    let hrs = Time.getHours();
+    hrs =
+      hrs > 12
+        ? this.setState({ hours: hrs - 12, ampm: "pm" })
+        : this.setState({ hours: hrs });
   }
 
   getMins() {
     let Time = new Date();
-    this.setState({ mins: Time.getMinutes() });
+    let min = Time.getMinutes();
+    min = min < 10 ? `0${min}` : min;
+    this.setState({ mins: min });
   }
 
   getSecs() {
     let Time = new Date();
-    this.setState({ seconds: Time.getSeconds() });
+    let sec = Time.getSeconds();
+    sec = sec < 10 ? `0${sec}` : sec;
+    this.setState({ seconds: sec });
   }
 
   componentDidMount() {
@@ -69,7 +78,9 @@ export class DigitalClock extends Component {
         </div>
         <div className="col-sm-4 col-md-4 col-lg-3">
           <div class="col-sm-12 col-md-12 col-lg-12 box">
-            <h1 class="content">PM</h1>
+            <h1 class="content">
+              {this.state.ampm}
+            </h1>
           </div>
         </div>
       </div>
