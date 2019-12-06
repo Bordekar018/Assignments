@@ -4,9 +4,9 @@ export class DigitalClock extends Component {
   constructor(props) {
     super(props);
 
-    this.getHrs = this.getHrs.bind(this);
-    this.getMins = this.getMins.bind(this);
-    this.getSecs = this.getSecs.bind(this);
+    /* this.getHrs = this.getHrs.bind(this)
+     this.getMins = this.getMins.bind(this)
+     this.getSecs = this.getSecs.bind(this) */
   }
 
   state = {
@@ -16,7 +16,7 @@ export class DigitalClock extends Component {
     ampm: "am"
   };
 
-  getHrs() {
+  getHrs = () => {
     let Time = new Date();
     let hrs = Time.getHours();
 
@@ -24,21 +24,21 @@ export class DigitalClock extends Component {
       hrs = hrs - 12;
       this.setState({ hours: hrs, ampm: "pm" });
     } else this.setState({ hours: hrs });
-  }
+  };
 
-  getMins() {
+  getMins = () => {
     let Time = new Date();
     let min = Time.getMinutes();
     min = min < 10 ? `0${min}` : min;
     this.setState({ mins: min });
-  }
+  };
 
-  getSecs() {
+  getSecs = () => {
     let Time = new Date();
     let sec = Time.getSeconds();
     sec = sec < 10 ? `0${sec}` : sec;
     this.setState({ seconds: sec });
-  }
+  };
 
   componentDidMount() {
     setInterval(() => {
