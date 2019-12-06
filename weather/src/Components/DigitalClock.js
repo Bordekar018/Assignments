@@ -17,7 +17,6 @@ export class DigitalClock extends Component {
   };
 
   getHrs() {
-    let a = 0;
     let Time = new Date();
     let hrs = Time.getHours();
 
