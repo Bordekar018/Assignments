@@ -4,6 +4,6 @@ import "./index.css";
 import "./App.css";
 import "./ComponentCSS/Digital.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import App from "./App";
+import Weather from "./Components/latlong";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Weather />, document.getElementById("root"));

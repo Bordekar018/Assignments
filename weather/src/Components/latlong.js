@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DigitalClock from "./DigitalClock";
 
 export class Weather extends Component {
   constructor(props) {
@@ -23,25 +24,78 @@ export class Weather extends Component {
   render() {
     if (this.state.Latitude && !this.state.error) {
       return (
-        <div>
-          <h2 className="neutro">
-            Latitude - {this.state.Latitude}
-          </h2>
+        <div className="BackGround">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-sm-12 col-md-4 col-lg-4 ">
+                <h2 className="neutro">
+                  Latitude - {this.state.Latitude}
+                </h2>
+              </div>
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+            </div>
+            <div className="row">
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+              <div className="col-sm-12 col-md-4 col-lg-4 ">
+                <div className="abc">
+                  <DigitalClock />
+                </div>
+              </div>
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+            </div>
+          </div>
         </div>
       );
     }
     if (!this.state.Latitude && this.state.error) {
       return (
-        <div>
-          <h2 className="neutro">
-            Error - {this.state.error}
-          </h2>
+        <div className="BackGround">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-sm-12 col-md-4 col-lg-4 ">
+                <h2 className="neutro">
+                  Error - {this.state.error}
+                </h2>
+              </div>
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+            </div>
+            <div className="row">
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+              <div className="col-sm-12 col-md-4 col-lg-4 ">
+                <div className="abc">
+                  <DigitalClock />
+                </div>
+              </div>
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+            </div>
+          </div>
         </div>
       );
     } else {
       return (
-        <div className="neutro">
-          <h2>Loading.....</h2>
+        <div className="BackGround">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-sm-12 col-md-4 col-lg-4 ">
+                <h2 className="neutro">
+                  Error - {this.state.error}
+                </h2>
+              </div>
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+            </div>
+            <div className="row">
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+              <div className="col-sm-12 col-md-4 col-lg-4 ">
+                <div className="neutro">
+                  <h2>Loading.....</h2>
+                </div>
+              </div>
+              <div className="col-sm-12 col-md-4 col-lg-4 " />
+            </div>
+          </div>
         </div>
       );
     }
