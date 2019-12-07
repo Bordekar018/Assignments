@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DigitalClock from "./DigitalClock";
-
+import DetectWeather from "./DetectWeather";
 export class Weather extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ export class Weather extends Component {
             <div className="row">
               <div className="col-sm-12 col-md-4 col-lg-4 ">
                 <h2 className="neutro">
-                  Latitude - {this.state.Latitude}
+                  <DetectWeather />
                 </h2>
               </div>
               <div className="col-sm-12 col-md-4 col-lg-4 " />
@@ -80,7 +80,7 @@ export class Weather extends Component {
             <div className="row">
               <div className="col-sm-12 col-md-4 col-lg-4 ">
                 <h2 className="neutro">
-                  Error - {this.state.error}
+                  <h2>Loading.....</h2>
                 </h2>
               </div>
               <div className="col-sm-12 col-md-4 col-lg-4 " />
@@ -89,8 +89,8 @@ export class Weather extends Component {
             <div className="row">
               <div className="col-sm-12 col-md-4 col-lg-4 " />
               <div className="col-sm-12 col-md-4 col-lg-4 ">
-                <div className="neutro">
-                  <h2>Loading.....</h2>
+                <div className="abc">
+                  <DigitalClock />
                 </div>
               </div>
               <div className="col-sm-12 col-md-4 col-lg-4 " />

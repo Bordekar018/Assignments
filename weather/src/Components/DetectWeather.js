@@ -1,6 +1,6 @@
 import React from "react";
 
-function DetectWeather(latitude) {
+function DetectWeather() {
   return <div />;
 }
 
