@@ -19,3 +19,12 @@
   font-family: digital;
   src: url(./digital-7.ttf);
 }
+@font-face {
+  font-family: goodTimes;
+  src: url(./goodTimes.ttf);
+}
+
+.neutro {
+  color: black;
+  font-family: goodTimes;
+}
