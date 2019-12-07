@@ -26,13 +26,7 @@ export class Weather extends Component {
     if (this.state.Latitude && !this.state.error) {
       return (
         <div className="BackGround">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-sm-12 col-md-12 col-lg-12 ">
-                <DetectWeather lat={this.state.Latitude} />
-              </div>
-            </div>
-          </div>
+          <DetectWeather lat={this.state.Latitude} />
         </div>
       );
     }

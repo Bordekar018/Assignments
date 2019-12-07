@@ -25,6 +25,11 @@ function DetectWeather(props) {
                 Season: {season}
               </h1>
             </div>
+            <div className="col-sm-12 col-md-4 col-lg-4 " />
+            <div className="col-sm-12 col-md-4 col-lg-4 " />
+          </div>
+          <div className="row">
+            <div className="col-sm-12 col-md-4 col-lg-4 " />
             <div className="col-sm-12 col-md-4 col-lg-4 ">
               <div className="abc">
                 <DigitalClock />
@@ -49,6 +54,11 @@ function DetectWeather(props) {
                 Season: {season}
               </h1>
             </div>
+            <div className="col-sm-12 col-md-4 col-lg-4 " />
+            <div className="col-sm-12 col-md-4 col-lg-4 " />
+          </div>
+          <div className="row">
+            <div className="col-sm-12 col-md-4 col-lg-4 " />
             <div className="col-sm-12 col-md-4 col-lg-4 ">
               <div className="abc">
                 <DigitalClock />
