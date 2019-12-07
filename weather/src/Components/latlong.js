@@ -9,6 +9,8 @@ export class Weather extends Component {
       Latitude: "",
       error: ""
     };
+  }
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       position => {
         console.log(position);
@@ -20,7 +22,6 @@ export class Weather extends Component {
       }
     );
   }
-
   render() {
     if (this.state.Latitude && !this.state.error) {
       return (
