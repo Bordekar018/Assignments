@@ -28,9 +28,7 @@ export class Weather extends Component {
           <div className="container-fluid">
             <div className="row">
               <div className="col-sm-12 col-md-4 col-lg-4 ">
-                <h2 className="neutro">
-                  <DetectWeather />
-                </h2>
+                <DetectWeather lat={this.state.Latitude} />
               </div>
               <div className="col-sm-12 col-md-4 col-lg-4 " />
               <div className="col-sm-12 col-md-4 col-lg-4 " />
@@ -79,9 +77,7 @@ export class Weather extends Component {
           <div className="container-fluid">
             <div className="row">
               <div className="col-sm-12 col-md-4 col-lg-4 ">
-                <h2 className="neutro">
-                  <h2>Loading.....</h2>
-                </h2>
+                <h2 className="neutro">Loading.....</h2>
               </div>
               <div className="col-sm-12 col-md-4 col-lg-4 " />
               <div className="col-sm-12 col-md-4 col-lg-4 " />
