@@ -1,5 +1,5 @@
 import React from "react";
-
+import DigitalClock from "./DigitalClock";
 function DetectWeather(props) {
   console.log(props);
 
@@ -14,13 +14,25 @@ function DetectWeather(props) {
   }
   let season = WeatherInfo(props.lat, new Date().getMonth());
   return (
-    <div>
-      <h1>
-        Latitude: {props.lat}
-      </h1>
-      <h1>
-        Season: {season}
-      </h1>
+    <div className="BackGround">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-12 col-md-4 col-lg-4 ">
+            <h1>
+              Latitude: {props.lat}
+            </h1>
+            <h1>
+              Season: {season}
+            </h1>
+          </div>
+          <div className="col-sm-12 col-md-4 col-lg-4 ">
+            <div className="abc">
+              <DigitalClock />
+            </div>
+          </div>
+          <div className="col-sm-12 col-md-4 col-lg-4 " />
+        </div>
+      </div>
     </div>
   );
 }

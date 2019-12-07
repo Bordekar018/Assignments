@@ -27,20 +27,9 @@ export class Weather extends Component {
         <div className="BackGround">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-sm-12 col-md-4 col-lg-4 ">
+              <div className="col-sm-12 col-md-12 col-lg-12 ">
                 <DetectWeather lat={this.state.Latitude} />
               </div>
-              <div className="col-sm-12 col-md-4 col-lg-4 " />
-              <div className="col-sm-12 col-md-4 col-lg-4 " />
-            </div>
-            <div className="row">
-              <div className="col-sm-12 col-md-4 col-lg-4 " />
-              <div className="col-sm-12 col-md-4 col-lg-4 ">
-                <div className="abc">
-                  <DigitalClock />
-                </div>
-              </div>
-              <div className="col-sm-12 col-md-4 col-lg-4 " />
             </div>
           </div>
         </div>
