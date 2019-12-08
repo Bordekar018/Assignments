@@ -5,7 +5,7 @@ class Add extends Component {
     super(props);
 
     this.state = {
-      FirstInput: 0,
+      FirstInput: 0, //0 beacause [+] will consider [""] as Concatination
       secondInput: 0,
       output: 0
     };
@@ -21,7 +21,7 @@ class Add extends Component {
 
   add = e => {
     let addition =
-      Number(this.state.FirstInput) + Number(this.state.secondInput);
+      Number(this.state.FirstInput) + Number(this.state.secondInput); //Conversion String-->Number
     this.setState({ output: addition });
     console.log(addition);
     console.log(typeof this.state.FirstInput);
