@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./Css/Add.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import * as serviceWorker from "./serviceWorker";
 import Add from "./Components/add";

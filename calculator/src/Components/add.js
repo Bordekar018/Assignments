@@ -31,55 +31,59 @@ class Add extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className="row">
+      <div className="container-fluid BackGround">
+        <div className="row ">
           <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 " />
-          <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
-            <h1>Adding Two Numbers</h1>
+          <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 heading">
+            <h1 className="sub">Adding Two Numbers</h1>
           </div>
           <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 " />
         </div>
 
-        <div className="row">
+        <div className="row heading ">
           <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 " />
-          <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
-            <form>
+          <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 box">
+            <form class="form-inline">
               <input
                 type="number"
-                className="form-control"
+                className="form-control ipbox"
                 placeholder="Enter a Number"
                 value={this.state.FirstInput}
                 onChange={this.getinputFirst}
               />
               <input
                 type="number"
-                className="form-control"
+                className="form-control ipbox"
                 placeholder="Enter a Number"
                 value={this.state.secondInput}
                 onChange={this.getinputSecond}
               />
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={this.add}
-              >
-                Primary
-              </button>
+            </form>
+            <form>
+              <center>
+                <button
+                  type="submit"
+                  className="btn btn-dark btnSub"
+                  onClick={this.add}
+                >
+                  Add Them
+                </button>
+              </center>
             </form>
           </div>
           <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 " />
         </div>
 
-        <div className="row">
+        <div className="row heading">
           <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 " />
           <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
-            <label id="lblOutput">
+            <h1 className="op">
               {this.state.output}
-            </label>
+            </h1>
           </div>
           <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 " />
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
