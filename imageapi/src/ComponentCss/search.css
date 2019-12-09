@@ -3,17 +3,13 @@
 }
 .BG {
   background: url(../Uploads/ApiBg.jpg) repeat;
-  height: 100%;
+  min-height: 100vh; /* souvenir */
   width: 100%;
 }
 .btnSub {
   margin-left: 10px;
 }
-html,
-body {
-  height: 100%;
-  margin: 0px;
-}
+
 .pro {
   margin-top: 10px;
 }
