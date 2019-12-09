@@ -8,12 +8,11 @@ const Product = props => {
     <div className="container">
       <div className="row">
         {props.productProp.hits.map(data =>
-          <div className="col-md-4">
+          <div className="col-md-4 pro">
             <img
-              className="card-img-top img-responsive"
+              className="card-img-top img-responsive image"
               src={data.largeImageURL}
               alt={data.tag}
-              style={{ height: "275px" }}
             />
           </div>
         )}

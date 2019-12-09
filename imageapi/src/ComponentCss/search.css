@@ -1,0 +1,23 @@
+.heading {
+  padding-top: 30px;
+}
+.BG {
+  background: url(../Uploads/ApiBg.jpg) repeat;
+  height: 100%;
+  width: 100%;
+}
+.btnSub {
+  margin-left: 10px;
+}
+html,
+body {
+  height: 100%;
+  margin: 0px;
+}
+.pro {
+  margin-top: 10px;
+}
+.image {
+  height: 300px;
+  border: 5px white solid;
+}
