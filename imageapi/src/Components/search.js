@@ -29,6 +29,7 @@ class Search extends Component {
     );
     this.setState({ products: daa.data });
   };
+
   render() {
     return (
       <div className="BGH">
