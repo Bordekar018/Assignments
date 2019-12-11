@@ -10,3 +10,15 @@
   height: 38px;
   background: #ededed;
 }
+.other {
+  background-color: #ededed;
+  min-height: 93vh;
+}
+
+.name {
+  font-weight: 700;
+  font-size: xx-large;
+}
+.img {
+  padding-bottom: 8px;
+}
