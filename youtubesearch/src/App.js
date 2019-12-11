@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import Logo from "./Uploads/Logo.png";
 import Player from "./Components/Player";
 import Playlist from "./Components/Playlist";
@@ -17,7 +18,22 @@ export class App extends Component {
     this.setState({ searchField: e.target.value });
     //console.log(e.target.value)
   };
-
+  btnOnClick = async e => {
+    e.preventDefault();
+    //console.log("Working..")
+    let getDataFromThisURL = await axios.get(
+      `https://www.googleapis.com/youtube/v3/search?key=AIzaSyCIkiYdjMY1MSQTZqNJKpdqNXuiKDZz-L8`,
+      {
+        params: {
+          part: "snippet",
+          maxResults: 10,
+          q: this.state.searchField,
+          pageToken: "AIzaSyCIkiYdjMY1MSQTZqNJKpdqNXuiKDZz-L8"
+        }
+      }
+    );
+    console.log(getDataFromThisURL);
+  };
   render() {
     return (
       <div className="container-fluid">
@@ -33,6 +49,7 @@ export class App extends Component {
               placeholder="Search"
               value={this.state.searchField}
               YoutubeInput={this.search}
+              onClickEvent={this.btnOnClick}
             />
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 " />
