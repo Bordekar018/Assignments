@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Logo from "./Uploads/Logo.png";
 import Player from "./Components/Player";
-import Playlist from "./Components/Playlist";
+import Playlist from "./Components/PlaylistComponent/Playlist";
 import SearchBox from "./Components/SearchBox";
 
 export class App extends Component {
