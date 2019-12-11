@@ -32,7 +32,8 @@ export class App extends Component {
         }
       }
     );
-    console.log(getDataFromThisURL);
+    //console.log(getDataFromThisURL)
+    this.setState({ youtubeVideoList: getDataFromThisURL.data.items });
   };
   render() {
     return (
