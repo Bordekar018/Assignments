@@ -55,13 +55,20 @@ export class App extends Component {
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 " />
         </div>
+
         <div className="row other">
           <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <p>Hiii</p>
             <Player />
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <Playlist VideoList={this.state.youtubeVideoList} />
+            <div className="row vplaylist">
+              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-3" />
+              <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <Playlist VideoList={this.state.youtubeVideoList} />
+              </div>
+              <div className="col-xs-12 col-sm-12 col-md-4 col-lg-1" />
+            </div>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./ComponentCSS/SearchBox.css";
 import App from "./App";
 import "./App.css";
+import "./ComponentCSS/playlist.css";
 import * as serviceWorker from "./serviceWorker";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
