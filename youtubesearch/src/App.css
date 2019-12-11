@@ -1,24 +1,15 @@
-.searchBox {
-  padding-top: 10px;
-}
-.btnImg {
-  background-repeat: no-repeat;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-.SearchDiv {
-  height: 38px;
-  background: #ededed;
-}
 .other {
   background-color: #ededed;
   min-height: 93vh;
 }
 
 .name {
-  font-weight: 700;
-  font-size: xx-large;
+  font-weight: 600;
+  font-size: x-large;
 }
 .img {
-  padding-bottom: 8px;
+  padding-bottom: 9px;
+}
+.logoMan {
+  padding-top: 5px;
 }
