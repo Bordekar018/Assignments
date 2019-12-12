@@ -9,14 +9,15 @@ function Player(props) {
     return null;
   }
   return (
-    <iframe
-      width="900"
-      height="500"
-      src={`https://www.youtube.com/embed/${videoOnOnClick.id.videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    />
+    <div class="embed-responsive embed-responsive-21by9">
+      <iframe
+        className="tubeplayer"
+        src={`https://www.youtube.com/embed/${videoOnOnClick.id.videoId}`}
+        frameBorder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
   );
 }
 
