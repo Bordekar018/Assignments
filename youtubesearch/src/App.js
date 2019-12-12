@@ -62,7 +62,7 @@ export class App extends Component {
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 " />
         </div>
 
-        <div className="row other">
+        <div className="row other vplaylist">
           <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <Player videoOnOnClick={this.state.playOnClickEvent} />
           </div>

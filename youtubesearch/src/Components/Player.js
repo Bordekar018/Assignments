@@ -10,8 +10,8 @@ function Player(props) {
   }
   return (
     <iframe
-      width="560"
-      height="315"
+      width="900"
+      height="500"
       src={`https://www.youtube.com/embed/${videoOnOnClick.id.videoId}`}
       frameBorder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
