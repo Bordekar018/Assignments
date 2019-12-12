@@ -6,7 +6,7 @@ function ParticularVideo(props) {
     Ukey,
     playVideoMethodToParticularVideoComponent
   } = props;
-  console.log(PassedDataToThisComponent);
+  //console.log(PassedDataToThisComponent);
 
   return (
     //pass the key from [playlist.js] component

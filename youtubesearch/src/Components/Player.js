@@ -3,13 +3,13 @@ import React from "react";
 function Player(props) {
   //console.log(props)
   let { videoOnOnClick } = props;
-  console.log(videoOnOnClick);
+  //console.log(videoOnOnClick)
 
   if (!videoOnOnClick) {
     return null;
   }
   return (
-    <div class="embed-responsive embed-responsive-21by9">
+    <div className="embed-responsive embed-responsive-21by9">
       <iframe
         className="tubeplayer"
         src={`https://www.youtube.com/embed/${videoOnOnClick.id.videoId}`}
