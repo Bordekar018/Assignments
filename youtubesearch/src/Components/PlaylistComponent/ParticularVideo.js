@@ -1,10 +1,10 @@
 import React from "react";
 
 function ParticularVideo(props) {
-  let { PassedDataToThisComponent } = props;
+  let { PassedDataToThisComponent, key } = props;
 
   return (
-    <div className="card text-left">
+    <div className="card text-left" key={key.id.videoId}>
       <img
         className="card-img-top"
         src={PassedDataToThisComponent.snippet.thumbnails.high.url}
