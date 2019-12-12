@@ -3,7 +3,7 @@ import ParticularVideo from "./ParticularVideo";
 
 function Playlist(props) {
   let { VideoList, playVideoMethodToPlaylistComponent } = props;
-  console.log(props);
+  //console.log(props);
 
   return (
     <React.Fragment>
