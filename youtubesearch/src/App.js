@@ -35,6 +35,10 @@ export class App extends Component {
     //console.log(getDataFromThisURL)
     this.setState({ youtubeVideoList: getDataFromThisURL.data.items });
   };
+
+  playVideo = data => {
+    console.log("aaaaaaaa", data);
+  };
   render() {
     return (
       <div className="container-fluid">
@@ -59,13 +63,16 @@ export class App extends Component {
         <div className="row other">
           <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <p>Hiii</p>
-            <Player />
+            <Player videoButSendList={this.state.youtubeVideoList} />
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div className="row vplaylist">
               <div className="col-xs-12 col-sm-12 col-md-4 col-lg-3" />
               <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                <Playlist VideoList={this.state.youtubeVideoList} />
+                <Playlist
+                  VideoList={this.state.youtubeVideoList}
+                  playVideoMethodToPlaylistComponent={this.playVideo}
+                />
               </div>
               <div className="col-xs-12 col-sm-12 col-md-4 col-lg-1" />
             </div>

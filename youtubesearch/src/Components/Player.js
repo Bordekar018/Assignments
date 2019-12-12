@@ -1,9 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 
-export class Player extends Component {
-  render() {
-    return <div />;
-  }
+function Player(props) {
+  console.log(props);
+
+  return (
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/Z_-lSJg52NU"
+      frameBorder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  );
 }
 
 export default Player;

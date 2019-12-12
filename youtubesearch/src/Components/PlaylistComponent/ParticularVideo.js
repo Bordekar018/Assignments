@@ -1,10 +1,25 @@
 import React from "react";
 
 function ParticularVideo(props) {
-  let { PassedDataToThisComponent, key } = props;
+  let {
+    PassedDataToThisComponent,
+    Ukey,
+    playVideoMethodToParticularVideoComponent
+  } = props;
+  console.log(PassedDataToThisComponent);
 
   return (
-    <div className="card text-left" key={key.id.videoId}>
+    //pass the key from [playlist.js] component
+    <div
+      className="card text-left"
+      key={Ukey}
+      onClick={() =>
+        playVideoMethodToParticularVideoComponent(PassedDataToThisComponent)}
+      /* here [playVideoMethodToParticularVideoComponent(PassedDataToThisComponent)] in that
+         ["playVideoMethodToParticularVideoComponent"] is ["playVideo"] Method in App.js and
+         ["PassedDataToThisComponent"] is ["data"] Parameter of playVideo Method
+         */
+    >
       <img
         className="card-img-top"
         src={PassedDataToThisComponent.snippet.thumbnails.high.url}

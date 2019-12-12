@@ -2,14 +2,18 @@ import React from "react";
 import ParticularVideo from "./ParticularVideo";
 
 function Playlist(props) {
+  let { VideoList, playVideoMethodToPlaylistComponent } = props;
   console.log(props);
 
   return (
     <React.Fragment>
-      {props.VideoList.map(whatEverData =>
+      {VideoList.map(whatEverData =>
         <ParticularVideo
-          key={whatEverData.id.videoId}
+          Ukey={whatEverData.id.videoId}
           PassedDataToThisComponent={whatEverData}
+          playVideoMethodToParticularVideoComponent={
+            playVideoMethodToPlaylistComponent
+          }
         />
       )}
     </React.Fragment>
