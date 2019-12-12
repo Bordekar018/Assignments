@@ -25,9 +25,9 @@ function ParticularVideo(props) {
         src={PassedDataToThisComponent.snippet.thumbnails.high.url}
       />
       <div className="card-body a">
-        <h4 className="card-title">
+        <h6 className="card-title">
           {PassedDataToThisComponent.snippet.title}
-        </h4>
+        </h6>
         <p className="card-text">
           {PassedDataToThisComponent.snippet.channelTitle}
         </p>
