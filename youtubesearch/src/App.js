@@ -11,7 +11,8 @@ export class App extends Component {
 
     this.state = {
       searchField: "",
-      youtubeVideoList: []
+      youtubeVideoList: [],
+      playOnClickEvent: ""
     };
   }
   search = e => {
@@ -37,7 +38,8 @@ export class App extends Component {
   };
 
   playVideo = data => {
-    console.log("aaaaaaaa", data);
+    this.setState({ playOnClickEvent: data });
+    //console.log("DataOfParticularVideoOnClick", data)
   };
   render() {
     return (
@@ -62,8 +64,7 @@ export class App extends Component {
 
         <div className="row other">
           <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <p>Hiii</p>
-            <Player videoButSendList={this.state.youtubeVideoList} />
+            <Player videoOnOnClick={this.state.playOnClickEvent} />
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div className="row vplaylist">
