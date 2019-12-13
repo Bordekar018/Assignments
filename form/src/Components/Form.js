@@ -57,40 +57,59 @@ class Form extends Component {
   render() {
     return (
       <form>
-        <div>
-          <label>FirstName: </label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">
+              FirstName
+            </span>
+          </div>
           <input
             type="text"
+            class="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
             value={this.state.firstName}
             onChange={this.sendFirstName}
           />
         </div>
-        <div>
-          <label>LastName: </label>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">
+              LastName
+            </span>
+          </div>
           <input
             type="text"
+            class="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
             value={this.state.lastname}
             onChange={this.sendLastName}
           />
         </div>
-        <div>
-          <label>Gender: </label>
-
-          <RadioGroup
-            name="gender"
-            selectedValue={this.state.gender}
-            onChange={this.sendGender}
-          >
-            <Radio value="Male" />Male
-            <Radio value="Female" />Female
-            <Radio value="Other" />Other
-          </RadioGroup>
+        <label>Gender</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <RadioGroup
+              name="gender"
+              selectedValue={this.state.gender}
+              onChange={this.sendGender}
+            >
+              <Radio value="Male" />Male
+              <br />
+              <Radio value="Female" />Female
+              <br />
+              <Radio value="Other" />Other
+            </RadioGroup>
+          </div>
         </div>
+
         <div className="form-group row">
-          <label htmlFor="example-date-input" className="col-2 col-form-label">
+          <label htmlFor="example-date-input" className="col-1 col-form-label">
             Date
           </label>
-          <div className="col-10">
+          <div className="col-11">
             <input
               className="form-control"
               type="date"
@@ -100,36 +119,57 @@ class Form extends Component {
             />
           </div>
         </div>
-        <div>
-          <label>Email: </label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">
+              Email
+            </span>
+          </div>
           <input
             type="text"
+            class="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
             value={this.state.email}
             onChange={this.sendEmail}
           />
         </div>
-        <div>
-          <label>Phone number: </label>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">
+              Contact Number
+            </span>
+          </div>
           <input
-            type="Number"
+            type="text"
+            class="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
             value={this.state.phone}
             onChange={this.sendPhoneNo}
           />
         </div>
-        <div>
-          <label>Address: </label>
-          <textarea
-            type="textarea"
-            value={this.state.address}
-            onChange={this.sendAddress}
-          />
-        </div>
 
         <div>
-          <button type="submit" onClick={this.alertinfo}>
-            Submit
-          </button>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Address</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              value={this.state.address}
+              onChange={this.sendAddress}
+            />
+          </div>
         </div>
+        <button
+          type="button"
+          class="btn btn-outline-success"
+          onClick={this.alertinfo}
+        >
+          Submit
+        </button>
       </form>
     );
   }
