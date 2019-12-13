@@ -13,7 +13,11 @@ class Form extends Component {
       option: "React",
       phone: "",
       date: "",
-      email: ""
+      email: "",
+      userlogin: {
+        username: "",
+        password: ""
+      }
     };
   }
 
