@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-i;
+import { RadioGroup, Radio } from "react-radio-group";
 
 class Form extends Component {
   constructor(props) {
@@ -8,8 +8,12 @@ class Form extends Component {
     this.state = {
       firstName: "",
       lastname: "",
+      gender: "Male",
       address: "",
-      option: "React"
+      option: "React",
+      phone: "",
+      date: "",
+      email: ""
     };
   }
 
@@ -28,15 +32,26 @@ class Form extends Component {
     console.log(event.target);
   };
 
-  selectOption = event => {
-    this.setState({ option: event.target.value });
-    console.log(event.target);
+  sendGender = value => {
+    this.setState({ gender: value });
+    console.log(value);
+  };
+  sendPhoneNo = e => {
+    this.setState({ phone: e.target.value });
+    console.log(this.state.phone);
+  };
+  sendDate = e => {
+    this.setState({ date: e.target.value });
+    console.log(this.state.date);
   };
 
+  sendEmail = e => {
+    this.setState({ email: e.target.value });
+  };
   alertinfo = () => {
     alert(
       `Firstname: ${this.state.firstName} Address: ${this.state
-        .address} lang: ${this.state.option}`
+        .address} lang: ${this.state.option} ${this.state.date}`
     );
   };
   render() {
@@ -60,6 +75,46 @@ class Form extends Component {
         </div>
         <div>
           <label>Gender: </label>
+
+          <RadioGroup
+            name="gender"
+            selectedValue={this.state.gender}
+            onChange={this.sendGender}
+          >
+            <Radio value="Male" />Male
+            <Radio value="Female" />Female
+            <Radio value="Other" />Other
+          </RadioGroup>
+        </div>
+        <div className="form-group row">
+          <label htmlFor="example-date-input" className="col-2 col-form-label">
+            Date
+          </label>
+          <div className="col-10">
+            <input
+              className="form-control"
+              type="date"
+              value={this.state.date}
+              onChange={this.sendDate}
+              id="example-date-input"
+            />
+          </div>
+        </div>
+        <div>
+          <label>Email: </label>
+          <input
+            type="text"
+            value={this.state.email}
+            onChange={this.sendEmail}
+          />
+        </div>
+        <div>
+          <label>Phone number: </label>
+          <input
+            type="Number"
+            value={this.state.phone}
+            onChange={this.sendPhoneNo}
+          />
         </div>
         <div>
           <label>Address: </label>
@@ -69,14 +124,7 @@ class Form extends Component {
             onChange={this.sendAddress}
           />
         </div>
-        <div>
-          <label>Topic</label>
-          <select value={this.state.option} onChange={this.selectOption}>
-            <option value="Angular">Angular</option>
-            <option value="React">React</option>
-            <option value="Vue">Vue</option>
-          </select>
-        </div>
+
         <div>
           <button type="submit" onClick={this.alertinfo}>
             Submit
