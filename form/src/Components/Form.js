@@ -93,7 +93,7 @@ class Form extends Component {
     };
   };
 
-  alertinfo = () => {
+  submitInfo = () => {
     let StoreJson = this.store();
     let ConvertoJson = JSON.stringify(StoreJson);
     localStorage.setItem("StoreInfo", ConvertoJson);
@@ -260,7 +260,7 @@ class Form extends Component {
         <button
           type="button"
           className="btn btn-outline-success"
-          onClick={this.alertinfo}
+          onClick={this.submitInfo}
         >
           Submit
         </button>
