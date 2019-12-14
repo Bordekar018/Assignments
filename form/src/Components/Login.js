@@ -18,7 +18,8 @@ export class Login extends Component {
   };
 
   getDataFromLocalStorage = () => {
-    return localStorage.getItem("StoreInfo");
+    let data = localStorage.getItem("StoreInfo");
+    return data;
   };
 
   convertDatajsonIntoObject = () => {
@@ -36,7 +37,7 @@ export class Login extends Component {
     let upregi = jsdata.userlogin.password;
 
     if (uName == uregi && uPass == upregi) {
-      alert(`${jsdata.firstName} ${jsdata.lastname}`);
+      alert(`Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`);
     } else {
       alert(`Error`);
     }
