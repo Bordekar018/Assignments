@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./ComponentCSS/App.css";
 import Form from "./Components/Form";
 import Login from "./Components/Login";
 
@@ -8,10 +8,10 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-6 formcontent">
             <Form />
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 logincontent">
             <Login />
           </div>
         </div>

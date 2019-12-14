@@ -150,8 +150,11 @@ class Form extends Component {
           </div>
         </div>
 
-        <div className="form-group row">
-          <label htmlFor="example-date-input" className="col-1 col-form-label">
+        <div className="form-group row dateSection">
+          <label
+            htmlFor="example-date-input"
+            className="col-1 col-form-label lblDate"
+          >
             Date
           </label>
           <div className="col-11">
