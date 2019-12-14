@@ -32,8 +32,13 @@ export class Login extends Component {
     //console.log(jsdata.firstName)
     let uName = this.state.usernameLogin;
     let uPass = this.state.passwordLogin;
-    if (uName == jsdata.userlogin.username && uPass == userlogin.password) {
+    let uregi = jsdata.userlogin.username;
+    let upregi = jsdata.userlogin.password;
+
+    if (uName == uregi && uPass == upregi) {
       alert(`${jsdata.firstName} ${jsdata.lastname}`);
+    } else {
+      alert(`Error`);
     }
   };
 
