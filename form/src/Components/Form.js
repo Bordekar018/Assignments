@@ -77,12 +77,27 @@ class Form extends Component {
     this.setState({ userlogin: tempObjtostoreCPassword });
   };
 
+  store = () => {
+    return {
+      firstName: this.state.firstName,
+      lastname: this.state.lastname,
+      gender: this.state.gender,
+      address: this.state.address,
+      phone: this.state.phone,
+      date: this.state.date,
+      email: this.state.email,
+      userlogin: {
+        username: this.state.userlogin.username,
+        password: this.state.userlogin.password
+      }
+    };
+  };
+
   alertinfo = () => {
-    alert(
-      `Firstname: ${this.state.firstName} Address: ${this.state.address}  ${this
-        .state.date}
-        ${this.state.userlogin.username}`
-    );
+    let StoreJson = this.store();
+    let ConvertoJson = JSON.stringify(StoreJson);
+    localStorage.setItem("StoreInfo", ConvertoJson);
+    console.log(ConvertoJson);
   };
   render() {
     return (
