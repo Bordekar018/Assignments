@@ -10,13 +10,13 @@ class Form extends Component {
       lastname: "",
       gender: "Male",
       address: "",
-      option: "React",
       phone: "",
       date: "",
       email: "",
       userlogin: {
         username: "",
-        password: ""
+        password: "",
+        Cpassword: ""
       }
     };
   }
@@ -71,10 +71,16 @@ class Form extends Component {
     console.log(tempObjtostorePassword.username);
   };
 
+  sendCpassword = e => {
+    let tempObjtostoreCPassword = Object.assign({}, this.state.userlogin);
+    tempObjtostoreCPassword.Cpassword = e.target.value;
+    this.setState({ userlogin: tempObjtostoreCPassword });
+  };
+
   alertinfo = () => {
     alert(
-      `Firstname: ${this.state.firstName} Address: ${this.state
-        .address} lang: ${this.state.option} ${this.state.date}
+      `Firstname: ${this.state.firstName} Address: ${this.state.address}  ${this
+        .state.date}
         ${this.state.userlogin.username}`
     );
   };
@@ -217,6 +223,22 @@ class Form extends Component {
             aria-describedby="inputGroup-sizing-default"
             value={this.state.userlogin.password}
             onChange={this.sendPassword}
+          />
+        </div>
+
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">
+              Confirm Password
+            </span>
+          </div>
+          <input
+            type="text"
+            className="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
+            value={this.state.userlogin.Cpassword}
+            onChange={this.sendCpassword}
           />
         </div>
 
