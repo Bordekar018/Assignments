@@ -150,22 +150,19 @@ class Form extends Component {
           </div>
         </div>
 
-        <div className="form-group row dateSection">
-          <label
-            htmlFor="example-date-input"
-            className="col-1 col-form-label lblDate"
-          >
-            Date
-          </label>
-          <div className="col-11">
-            <input
-              className="form-control"
-              type="date"
-              value={this.state.date}
-              onChange={this.sendDate}
-              id="example-date-input"
-            />
+        <div className="input-group mb-3 mt-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">
+              Date
+            </span>
           </div>
+          <input
+            className="form-control"
+            type="date"
+            value={this.state.date}
+            onChange={this.sendDate}
+            id="example-date-input"
+          />
         </div>
         <div className="input-group mb-3">
           <div className="input-group-prepend">

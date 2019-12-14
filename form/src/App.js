@@ -6,7 +6,7 @@ import Login from "./Components/Login";
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col-lg-6 formcontent">
             <Form />
