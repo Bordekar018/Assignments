@@ -126,11 +126,11 @@ class Form extends Component {
               selectedValue={this.state.gender}
               onChange={this.sendGender}
             >
-              <Radio value="Male" />Male
+              <Radio value="Male" /> Male
               <br />
-              <Radio value="Female" />Female
+              <Radio value="Female" /> Female
               <br />
-              <Radio value="Other" />Other
+              <Radio value="Other" /> Other
             </RadioGroup>
           </div>
         </div>
