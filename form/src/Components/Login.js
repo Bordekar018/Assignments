@@ -36,7 +36,7 @@ export class Login extends Component {
     let uregi = jsdata.userlogin.username;
     let upregi = jsdata.userlogin.password;
 
-    if (uName == uregi && uPass == upregi) {
+    if (uName === uregi && uPass === upregi) {
       alert(`Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`);
     } else {
       alert(`Error`);
