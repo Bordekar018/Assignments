@@ -52,24 +52,44 @@ class Form extends Component {
   sendEmail = e => {
     this.setState({ email: e.target.value });
   };
+
+  sendUsername = e => {
+    let tempObjtostoreUserName = Object.assign({}, this.state.userlogin);
+    console.log(tempObjtostoreUserName);
+    tempObjtostoreUserName.username = e.target.value;
+    console.log(tempObjtostoreUserName);
+
+    this.setState({ userlogin: tempObjtostoreUserName }); //Doubt
+    console.log(tempObjtostoreUserName.password);
+  };
+
+  sendPassword = e => {
+    let tempObjtostorePassword = Object.assign({}, this.state.userlogin);
+    console.log(tempObjtostorePassword);
+    tempObjtostorePassword.password = e.target.value;
+    this.setState({ userlogin: tempObjtostorePassword });
+    console.log(tempObjtostorePassword.username);
+  };
+
   alertinfo = () => {
     alert(
       `Firstname: ${this.state.firstName} Address: ${this.state
-        .address} lang: ${this.state.option} ${this.state.date}`
+        .address} lang: ${this.state.option} ${this.state.date}
+        ${this.state.userlogin.username}`
     );
   };
   render() {
     return (
       <form>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">
               FirstName
             </span>
           </div>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
             value={this.state.firstName}
@@ -77,15 +97,15 @@ class Form extends Component {
           />
         </div>
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">
               LastName
             </span>
           </div>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
             value={this.state.lastname}
@@ -93,8 +113,8 @@ class Form extends Component {
           />
         </div>
         <label>Gender</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
+        <div className="input-group">
+          <div className="input-group-prepend">
             <RadioGroup
               name="gender"
               selectedValue={this.state.gender}
@@ -123,15 +143,15 @@ class Form extends Component {
             />
           </div>
         </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">
               Email
             </span>
           </div>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
             value={this.state.email}
@@ -139,15 +159,15 @@ class Form extends Component {
           />
         </div>
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">
               Contact Number
             </span>
           </div>
           <input
-            type="text"
-            class="form-control"
+            className="text"
+            className="form-control"
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
             value={this.state.phone}
@@ -156,10 +176,10 @@ class Form extends Component {
         </div>
 
         <div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Address</label>
+          <div className="form-group">
+            <label htmlFor="exampleFormControlTextarea1">Address</label>
             <textarea
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
               value={this.state.address}
@@ -167,9 +187,42 @@ class Form extends Component {
             />
           </div>
         </div>
+
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">
+              Username
+            </span>
+          </div>
+          <input
+            type="text"
+            className="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
+            value={this.state.userlogin.username}
+            onChange={this.sendUsername}
+          />
+        </div>
+
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-default">
+              Password
+            </span>
+          </div>
+          <input
+            type="text"
+            className="form-control"
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
+            value={this.state.userlogin.password}
+            onChange={this.sendPassword}
+          />
+        </div>
+
         <button
           type="button"
-          class="btn btn-outline-success"
+          className="btn btn-outline-success"
           onClick={this.alertinfo}
         >
           Submit
