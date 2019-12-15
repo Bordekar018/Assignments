@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { RadioGroup, Radio } from "react-radio-group";
+import SimpleReactValidator from "simple-react-validator";
 
 class Form extends Component {
   constructor(props) {
@@ -19,6 +20,8 @@ class Form extends Component {
         Cpassword: ""
       }
     };
+
+    this.validator = new SimpleReactValidator({ autoForceUpdate: this });
   }
 
   sendFirstName = event => {
@@ -98,6 +101,26 @@ class Form extends Component {
     let ConvertoJson = JSON.stringify(StoreJson);
     localStorage.setItem("StoreInfo", ConvertoJson);
     console.log(ConvertoJson);
+
+    if (this.validator.allValid()) {
+      let data = {
+        firstName: this.state.firstName,
+        lastname: this.state.lastname,
+        gender: this.state.gender,
+        address: this.state.address,
+        phone: this.state.phone,
+        date: this.state.date,
+        email: this.state.email,
+        userlogin: {
+          username: this.state.userlogin.username,
+          password: this.state.userlogin.password
+        }
+      };
+      console.log(data);
+    } else {
+      this.validator.showMessages();
+      this.forceUpdate();
+    }
   };
   render() {
     return (
@@ -116,6 +139,11 @@ class Form extends Component {
             value={this.state.firstName}
             onChange={this.sendFirstName}
           />
+          {this.validator.message(
+            "firstName",
+            this.state.firstName,
+            "required|min:2"
+          )}
         </div>
 
         <div className="input-group mb-3">
@@ -132,7 +160,13 @@ class Form extends Component {
             value={this.state.lastname}
             onChange={this.sendLastName}
           />
+          {this.validator.message(
+            "lastname",
+            this.state.lastname,
+            "required|min:2"
+          )}
         </div>
+
         <label>Gender</label>
         <div className="input-group">
           <div className="input-group-prepend">
@@ -163,6 +197,7 @@ class Form extends Component {
             onChange={this.sendDate}
             id="example-date-input"
           />
+          {this.validator.message("date", this.state.date, "required")}
         </div>
         <div className="input-group mb-3">
           <div className="input-group-prepend">
