@@ -34,26 +34,20 @@ export class Login extends Component {
     let jsdata = this.convertDatajsonIntoObject();
     console.log(jsdata);
     //console.log(jsdata.firstName)
-    let uName = this.state.usernameLogin;
-    let uPass = this.state.passwordLogin;
-    let uregi = jsdata.userlogin.username;
-    let upregi = jsdata.userlogin.password;
 
     if (this.validator.allValid()) {
-      let data = {
-        usernameLogin: this.state.usernameLogin,
-        passwordLogin: this.state.passwordLogin
-      };
-      console.log(data);
+      let uName = this.state.usernameLogin;
+      let uPass = this.state.passwordLogin;
+      let uregi = jsdata.userlogin.username;
+      let upregi = jsdata.userlogin.password;
+      if (uName === uregi && uPass === upregi) {
+        alert(`Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`);
+      } else {
+        alert("Error");
+      }
     } else {
       this.validator.showMessages();
       this.forceUpdate();
-    }
-
-    if (uName === uregi && uPass === upregi) {
-      alert(`Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`);
-    } else {
-      alert("Error");
     }
   };
   render() {

@@ -90,26 +90,11 @@ class Form extends Component {
   };
 
   submitInfo = () => {
-    let StoreJson = this.store();
-    let ConvertoJson = JSON.stringify(StoreJson);
-    localStorage.setItem("StoreInfo", ConvertoJson);
-    console.log(ConvertoJson);
-
     if (this.validator.allValid()) {
-      let data = {
-        firstName: this.state.firstName,
-        lastname: this.state.lastname,
-        gender: this.state.gender,
-        address: this.state.address,
-        phone: this.state.phone,
-        date: this.state.date,
-        email: this.state.email,
-        userlogin: {
-          username: this.state.userlogin.username,
-          password: this.state.userlogin.password
-        }
-      };
-      console.log(data);
+      let StoreJson = this.store();
+      let ConvertoJson = JSON.stringify(StoreJson);
+      localStorage.setItem("StoreInfo", ConvertoJson);
+      console.log(ConvertoJson);
     } else {
       this.validator.showMessages();
       this.forceUpdate();
