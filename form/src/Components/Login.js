@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SimpleReactValidator from "simple-react-validator";
 
 export class Login extends Component {
   constructor(props) {
@@ -8,6 +9,8 @@ export class Login extends Component {
       usernameLogin: "",
       passwordLogin: ""
     };
+
+    this.validator = new SimpleReactValidator();
   }
   getUsername = e => {
     this.setState({ usernameLogin: e.target.value });
@@ -37,12 +40,16 @@ export class Login extends Component {
     let upregi = jsdata.userlogin.password;
 
     if (uName === uregi && uPass === upregi) {
-      alert(`Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`);
+      if (this.validator.allValid()) {
+        alert(`Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`);
+      } else {
+        this.validator.showMessages();
+        this.autoForceUpdate();
+      }
     } else {
-      alert(`Error`);
+      alert("Error");
     }
   };
-
   render() {
     return (
       <React.Fragment>
@@ -60,6 +67,12 @@ export class Login extends Component {
             value={this.state.usernameLogin}
             onChange={this.getUsername}
           />
+
+          {this.validator.message(
+            "usernameLogin",
+            this.state.usernameLogin,
+            "required|min:2"
+          )}
         </div>
 
         <div className="input-group mb-3">
