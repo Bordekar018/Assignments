@@ -10,7 +10,7 @@ export class Login extends Component {
       passwordLogin: ""
     };
 
-    this.validator = new SimpleReactValidator();
+    this.validator = new SimpleReactValidator({ autoForceUpdate: this });
   }
   getUsername = e => {
     this.setState({ usernameLogin: e.target.value });
@@ -39,13 +39,19 @@ export class Login extends Component {
     let uregi = jsdata.userlogin.username;
     let upregi = jsdata.userlogin.password;
 
+    if (this.validator.allValid()) {
+      let data = {
+        usernameLogin: this.state.usernameLogin,
+        passwordLogin: this.state.passwordLogin
+      };
+      console.log(data);
+    } else {
+      this.validator.showMessages();
+      this.forceUpdate();
+    }
+
     if (uName === uregi && uPass === upregi) {
-      if (this.validator.allValid()) {
-        alert(`Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`);
-      } else {
-        this.validator.showMessages();
-        this.autoForceUpdate();
-      }
+      alert(`Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`);
     } else {
       alert("Error");
     }
@@ -89,6 +95,11 @@ export class Login extends Component {
             value={this.state.passwordLogin}
             onChange={this.getPassword}
           />
+          {this.validator.message(
+            "passwordLogin",
+            this.state.passwordLogin,
+            "required|min:2"
+          )}
         </div>
 
         <button
