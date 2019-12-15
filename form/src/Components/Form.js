@@ -274,11 +274,7 @@ class Form extends Component {
           )}
         </div>
 
-        <button
-          type="button"
-          class="btn btn-outline-info"
-          onClick={this.submitInfo}
-        >
+        <button type="button" class="btn btn-info" onClick={this.submitInfo}>
           Submit
         </button>
       </form>

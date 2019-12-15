@@ -6,8 +6,8 @@
   border-radius: 19px 19px 19px 19px;
   -moz-border-radius: 19px 19px 19px 19px;
   -webkit-border-radius: 19px 19px 19px 19px;
-  border: 7px solid #878787;
-  background-color: #565656;
+  border: 7px solid #565656;
+
   /*Transperent Card Because, didn't apply any color property */
 }
 .lblgender {

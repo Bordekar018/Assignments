@@ -96,11 +96,7 @@ export class Login extends Component {
           )}
         </div>
 
-        <button
-          type="button"
-          class="btn btn-outline-info"
-          onClick={this.loginUser}
-        >
+        <button type="button" class="btn btn-info" onClick={this.loginUser}>
           Login
         </button>
       </form>
