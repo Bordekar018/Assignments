@@ -152,6 +152,7 @@ class Form extends Component {
               name="gender"
               selectedValue={this.state.gender}
               onChange={this.sendGender}
+              className="lblgender"
             >
               <Radio value="Male" /> Male
               <br />
@@ -275,7 +276,7 @@ class Form extends Component {
 
         <button
           type="button"
-          className="btn btn-outline-success"
+          class="btn btn-outline-info"
           onClick={this.submitInfo}
         >
           Submit

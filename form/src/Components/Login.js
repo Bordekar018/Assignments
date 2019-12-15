@@ -98,7 +98,7 @@ export class Login extends Component {
 
         <button
           type="button"
-          className="btn btn-outline-success"
+          class="btn btn-outline-info"
           onClick={this.loginUser}
         >
           Login
