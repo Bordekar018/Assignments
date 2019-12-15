@@ -102,7 +102,7 @@ class Form extends Component {
   };
   render() {
     return (
-      <form class="loginContainer">
+      <form className="loginContainer">
         <div className="input-group mb-3">
           <div className="input-group-prepend">
             <span className="input-group-text" id="inputGroup-sizing-default">
@@ -274,7 +274,11 @@ class Form extends Component {
           )}
         </div>
 
-        <button type="button" class="btn btn-info" onClick={this.submitInfo}>
+        <button
+          type="button"
+          className="btn btn-info"
+          onClick={this.submitInfo}
+        >
           Submit
         </button>
       </form>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ComponentCSS/App.css";
 import Form from "./Components/Form";
 import Login from "./Components/Login";
+import UserInfo from "./Components/UserInfo";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
               <Login />
             </div>
           </div>
+          <UserInfo />
         </div>
       </div>
     );
