@@ -145,7 +145,7 @@ class Form extends Component {
           )}
         </div>
 
-        <label>Gender</label>
+        <label className="lblgender">Gender</label>
         <div className="input-group">
           <div className="input-group-prepend">
             <RadioGroup
@@ -217,7 +217,9 @@ class Form extends Component {
 
         <div>
           <div className="form-group">
-            <label htmlFor="exampleFormControlTextarea1">Address</label>
+            <label htmlFor="exampleFormControlTextarea1" className="lblgender">
+              Address
+            </label>
             <textarea
               className="form-control"
               id="exampleFormControlTextarea1"
