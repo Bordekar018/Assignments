@@ -87,7 +87,7 @@ export class Login extends Component {
             </span>
           </div>
           <input
-            type="text"
+            type="password"
             className="form-control"
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
