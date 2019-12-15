@@ -40,14 +40,21 @@ export class Login extends Component {
       let uPass = this.state.passwordLogin;
       let uregi = jsdata.userlogin.username;
       let upregi = jsdata.userlogin.password;
-      if (uName === uregi) {
-        if (uPass === upregi) {
-          alert(`Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`);
+
+      if (uName === uregi && uPass === upregi) {
+        if (uName === uregi) {
+          if (uPass === upregi) {
+            alert(
+              `Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname}`
+            );
+          } else {
+            alert("Password Does Not Match");
+          }
         } else {
-          alert("Password Does Not Match");
+          alert("UserName Does Not Match");
         }
       } else {
-        alert("UserName Does Not Match");
+        alert("Username and Password Does Not Match");
       }
     } else {
       this.validator.showMessages();
