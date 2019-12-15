@@ -16,8 +16,7 @@ class Form extends Component {
       email: "",
       userlogin: {
         username: "",
-        password: "",
-        Cpassword: ""
+        password: ""
       }
     };
 
@@ -72,12 +71,6 @@ class Form extends Component {
     tempObjtostorePassword.password = e.target.value;
     this.setState({ userlogin: tempObjtostorePassword });
     console.log(tempObjtostorePassword.username);
-  };
-
-  sendCpassword = e => {
-    let tempObjtostoreCPassword = Object.assign({}, this.state.userlogin);
-    tempObjtostoreCPassword.Cpassword = e.target.value;
-    this.setState({ userlogin: tempObjtostoreCPassword });
   };
 
   store = () => {
@@ -213,6 +206,7 @@ class Form extends Component {
             value={this.state.email}
             onChange={this.sendEmail}
           />
+          {this.validator.message("email", this.state.email, "required|email")}
         </div>
 
         <div className="input-group mb-3">
@@ -222,13 +216,18 @@ class Form extends Component {
             </span>
           </div>
           <input
-            className="text"
+            type="number"
             className="form-control"
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
             value={this.state.phone}
             onChange={this.sendPhoneNo}
           />
+          {this.validator.message(
+            "phone",
+            this.state.phone,
+            "required|phone|max:10"
+          )}
         </div>
 
         <div>
@@ -241,6 +240,7 @@ class Form extends Component {
               value={this.state.address}
               onChange={this.sendAddress}
             />
+            {this.validator.message("address", this.state.address, "required")}
           </div>
         </div>
 
@@ -258,6 +258,11 @@ class Form extends Component {
             value={this.state.userlogin.username}
             onChange={this.sendUsername}
           />
+          {this.validator.message(
+            "username",
+            this.state.userlogin.username,
+            "required|alpha_num|min:2"
+          )}
         </div>
 
         <div className="input-group mb-3">
@@ -267,29 +272,18 @@ class Form extends Component {
             </span>
           </div>
           <input
-            type="text"
+            type="password"
             className="form-control"
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
             value={this.state.userlogin.password}
             onChange={this.sendPassword}
           />
-        </div>
-
-        <div className="input-group mb-3">
-          <div className="input-group-prepend">
-            <span className="input-group-text" id="inputGroup-sizing-default">
-              Confirm Password
-            </span>
-          </div>
-          <input
-            type="text"
-            className="form-control"
-            aria-label="Default"
-            aria-describedby="inputGroup-sizing-default"
-            value={this.state.userlogin.Cpassword}
-            onChange={this.sendCpassword}
-          />
+          {this.validator.message(
+            "password",
+            this.state.userlogin.password,
+            "required|alpha_num|min:3"
+          )}
         </div>
 
         <button
