@@ -1,6 +1,9 @@
 .formcontent {
-  padding-top: 20px;
+  padding: 20px;
 }
 .logincontent {
-  padding-top: 20px;
+  padding: 20px;
+}
+.container {
+  padding-top: 30px;
 }

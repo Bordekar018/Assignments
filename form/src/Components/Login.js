@@ -52,7 +52,7 @@ export class Login extends Component {
   };
   render() {
     return (
-      <React.Fragment>
+      <form class="loginContainer">
         <div className="input-group mb-3">
           <div className="input-group-prepend">
             <span className="input-group-text" id="inputGroup-sizing-default">
@@ -103,7 +103,7 @@ export class Login extends Component {
         >
           Login
         </button>
-      </React.Fragment>
+      </form>
     );
   }
 }

@@ -102,7 +102,7 @@ class Form extends Component {
   };
   render() {
     return (
-      <form>
+      <form class="loginContainer">
         <div className="input-group mb-3">
           <div className="input-group-prepend">
             <span className="input-group-text" id="inputGroup-sizing-default">
