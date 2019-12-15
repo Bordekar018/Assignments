@@ -17,7 +17,6 @@ class App extends Component {
               <Login />
             </div>
           </div>
-          <UserInfo />
         </div>
       </div>
     );
