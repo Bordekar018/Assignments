@@ -16,3 +16,14 @@
 .srv-validation-message {
   color: white;
 }
+.heading {
+  color: white;
+  padding-bottom: 5px;
+}
+.mainTag {
+  text-align: center;
+  color: white;
+}
+.groupTogether {
+  border: 1px solid white;
+}

@@ -12,18 +12,23 @@ export class UserInfo extends Component {
     return (
       <div className="container">
         <div className="row">
-          <h4>
-            `Firstname: {}
-          </h4>
-          <h4>
-            Lastname: {}
-          </h4>
-          <h4>
-            Contact Number: {}
-          </h4>
-          <h4>
-            Email:{}
-          </h4>
+          <div className="col-lg-3 " />
+          <div className="col-lg-6 groupTogether">
+            <h1 className="mainTag">User Information</h1>
+            <h4 className="heading">
+              Firstname - {}
+            </h4>
+            <h4 className="heading">
+              Lastname - {}
+            </h4>
+            <h4 className="heading">
+              Contact Number - {}
+            </h4>
+            <h4 className="heading">
+              Email - {}
+            </h4>
+          </div>
+          <div className="col-lg-3 " />
         </div>
       </div>
     );
