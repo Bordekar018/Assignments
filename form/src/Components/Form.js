@@ -103,222 +103,224 @@ class Form extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="col-lg-6 formcontent" />
-        <div className="col-lg-6 formcontent">
-          <form className="loginContainer">
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span
-                  className="input-group-text"
-                  id="inputGroup-sizing-default"
-                >
-                  FirstName
-                </span>
-              </div>
-              <input
-                type="text"
-                className="form-control"
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-                value={this.state.firstName}
-                onChange={this.sendFirstName}
-              />
-              {this.validator.message(
-                "firstName",
-                this.state.firstName,
-                "required|min:2"
-              )}
-            </div>
-
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span
-                  className="input-group-text"
-                  id="inputGroup-sizing-default"
-                >
-                  LastName
-                </span>
-              </div>
-              <input
-                type="text"
-                className="form-control"
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-                value={this.state.lastname}
-                onChange={this.sendLastName}
-              />
-              {this.validator.message(
-                "lastname",
-                this.state.lastname,
-                "required|min:2"
-              )}
-            </div>
-
-            <label className="lblgender">Gender</label>
-            <div className="input-group">
-              <div className="input-group-prepend">
-                <RadioGroup
-                  name="gender"
-                  selectedValue={this.state.gender}
-                  onChange={this.sendGender}
-                  className="lblgender"
-                >
-                  <Radio value="Male" /> Male
-                  <br />
-                  <Radio value="Female" /> Female
-                  <br />
-                  <Radio value="Other" /> Other
-                </RadioGroup>
-              </div>
-            </div>
-
-            <div className="input-group mb-3 mt-3">
-              <div className="input-group-prepend">
-                <span
-                  className="input-group-text"
-                  id="inputGroup-sizing-default"
-                >
-                  Date
-                </span>
-              </div>
-              <input
-                className="form-control"
-                type="date"
-                value={this.state.date}
-                onChange={this.sendDate}
-                id="example-date-input"
-              />
-              {this.validator.message("date", this.state.date, "required")}
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span
-                  className="input-group-text"
-                  id="inputGroup-sizing-default"
-                >
-                  Email
-                </span>
-              </div>
-              <input
-                type="text"
-                className="form-control"
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-                value={this.state.email}
-                onChange={this.sendEmail}
-              />
-              {this.validator.message(
-                "email",
-                this.state.email,
-                "required|email"
-              )}
-            </div>
-
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span
-                  className="input-group-text"
-                  id="inputGroup-sizing-default"
-                >
-                  Contact Number
-                </span>
-              </div>
-              <input
-                type="number"
-                className="form-control"
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-                value={this.state.phone}
-                onChange={this.sendPhoneNo}
-              />
-              {this.validator.message(
-                "phone",
-                this.state.phone,
-                "required|phone|max:10"
-              )}
-            </div>
-
-            <div>
-              <div className="form-group">
-                <label
-                  htmlFor="exampleFormControlTextarea1"
-                  className="lblgender"
-                >
-                  Address
-                </label>
-                <textarea
+        <div className="row">
+          <div className="col-lg-3 formcontent" />
+          <div className="col-lg-6 formcontent">
+            <form className="loginContainer">
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span
+                    className="input-group-text"
+                    id="inputGroup-sizing-default"
+                  >
+                    FirstName
+                  </span>
+                </div>
+                <input
+                  type="text"
                   className="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                  value={this.state.address}
-                  onChange={this.sendAddress}
+                  aria-label="Default"
+                  aria-describedby="inputGroup-sizing-default"
+                  value={this.state.firstName}
+                  onChange={this.sendFirstName}
                 />
                 {this.validator.message(
-                  "address",
-                  this.state.address,
-                  "required"
+                  "firstName",
+                  this.state.firstName,
+                  "required|min:2"
                 )}
               </div>
-            </div>
 
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span
-                  className="input-group-text"
-                  id="inputGroup-sizing-default"
-                >
-                  Username
-                </span>
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span
+                    className="input-group-text"
+                    id="inputGroup-sizing-default"
+                  >
+                    LastName
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  className="form-control"
+                  aria-label="Default"
+                  aria-describedby="inputGroup-sizing-default"
+                  value={this.state.lastname}
+                  onChange={this.sendLastName}
+                />
+                {this.validator.message(
+                  "lastname",
+                  this.state.lastname,
+                  "required|min:2"
+                )}
               </div>
-              <input
-                type="text"
-                className="form-control"
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-                value={this.state.userlogin.username}
-                onChange={this.sendUsername}
-              />
-              {this.validator.message(
-                "username",
-                this.state.userlogin.username,
-                "required|alpha_num|min:2"
-              )}
-            </div>
 
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span
-                  className="input-group-text"
-                  id="inputGroup-sizing-default"
-                >
-                  Password
-                </span>
+              <label className="lblgender">Gender</label>
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <RadioGroup
+                    name="gender"
+                    selectedValue={this.state.gender}
+                    onChange={this.sendGender}
+                    className="lblgender"
+                  >
+                    <Radio value="Male" /> Male
+                    <br />
+                    <Radio value="Female" /> Female
+                    <br />
+                    <Radio value="Other" /> Other
+                  </RadioGroup>
+                </div>
               </div>
-              <input
-                type="password"
-                className="form-control"
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-                value={this.state.userlogin.password}
-                onChange={this.sendPassword}
-              />
-              {this.validator.message(
-                "password",
-                this.state.userlogin.password,
-                "required|alpha_num|min:3"
-              )}
-            </div>
 
-            <button
-              type="button"
-              className="btn btn-info"
-              onClick={this.submitInfo}
-            >
-              Submit
-            </button>
-          </form>
+              <div className="input-group mb-3 mt-3">
+                <div className="input-group-prepend">
+                  <span
+                    className="input-group-text"
+                    id="inputGroup-sizing-default"
+                  >
+                    Date
+                  </span>
+                </div>
+                <input
+                  className="form-control"
+                  type="date"
+                  value={this.state.date}
+                  onChange={this.sendDate}
+                  id="example-date-input"
+                />
+                {this.validator.message("date", this.state.date, "required")}
+              </div>
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span
+                    className="input-group-text"
+                    id="inputGroup-sizing-default"
+                  >
+                    Email
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  className="form-control"
+                  aria-label="Default"
+                  aria-describedby="inputGroup-sizing-default"
+                  value={this.state.email}
+                  onChange={this.sendEmail}
+                />
+                {this.validator.message(
+                  "email",
+                  this.state.email,
+                  "required|email"
+                )}
+              </div>
+
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span
+                    className="input-group-text"
+                    id="inputGroup-sizing-default"
+                  >
+                    Contact Number
+                  </span>
+                </div>
+                <input
+                  type="number"
+                  className="form-control"
+                  aria-label="Default"
+                  aria-describedby="inputGroup-sizing-default"
+                  value={this.state.phone}
+                  onChange={this.sendPhoneNo}
+                />
+                {this.validator.message(
+                  "phone",
+                  this.state.phone,
+                  "required|phone|max:10"
+                )}
+              </div>
+
+              <div>
+                <div className="form-group">
+                  <label
+                    htmlFor="exampleFormControlTextarea1"
+                    className="lblgender"
+                  >
+                    Address
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    value={this.state.address}
+                    onChange={this.sendAddress}
+                  />
+                  {this.validator.message(
+                    "address",
+                    this.state.address,
+                    "required"
+                  )}
+                </div>
+              </div>
+
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span
+                    className="input-group-text"
+                    id="inputGroup-sizing-default"
+                  >
+                    Username
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  className="form-control"
+                  aria-label="Default"
+                  aria-describedby="inputGroup-sizing-default"
+                  value={this.state.userlogin.username}
+                  onChange={this.sendUsername}
+                />
+                {this.validator.message(
+                  "username",
+                  this.state.userlogin.username,
+                  "required|alpha_num|min:2"
+                )}
+              </div>
+
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span
+                    className="input-group-text"
+                    id="inputGroup-sizing-default"
+                  >
+                    Password
+                  </span>
+                </div>
+                <input
+                  type="password"
+                  className="form-control"
+                  aria-label="Default"
+                  aria-describedby="inputGroup-sizing-default"
+                  value={this.state.userlogin.password}
+                  onChange={this.sendPassword}
+                />
+                {this.validator.message(
+                  "password",
+                  this.state.userlogin.password,
+                  "required|alpha_num|min:3"
+                )}
+              </div>
+
+              <button
+                type="button"
+                className="btn btn-info"
+                onClick={this.submitInfo}
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <div className="col-lg-3 formcontent" />
         </div>
-        <div className="col-lg-6 formcontent" />
       </React.Fragment>
     );
   }
