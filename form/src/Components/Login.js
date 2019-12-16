@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import SimpleReactValidator from "simple-react-validator";
+import { Redirect, Route } from "react-router-dom";
+import UserInfo from "./UserInfo";
 
 export class Login extends Component {
   constructor(props) {
