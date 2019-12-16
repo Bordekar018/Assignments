@@ -45,9 +45,10 @@ export class Login extends Component {
 
       if (uName === uregi) {
         if (uPass === upregi) {
-          alert(
-            `Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname} Contact Number: ${jsdata.phone} Email: ${jsdata.email}`
-          );
+          // alert(
+          //   `Firstname: ${jsdata.firstName} Lastname: ${jsdata.lastname} Contact Number: ${jsdata.phone} Email: ${jsdata.email}`
+          // );
+          this.props.history.replace("/UserInfo");
         } else {
           alert("Password Does Not Match");
         }
