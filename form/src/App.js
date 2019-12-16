@@ -9,6 +9,7 @@ import {
   Switch
 } from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import UserInfo from "./Components/UserInfo";
 
 class App extends Component {
   render() {
@@ -18,7 +19,7 @@ class App extends Component {
         <div className="container">
           <Switch>
             <Route path="/" exact component={Form} />
-
+            <Route path="/UserInfo" exact component={UserInfo} />
             <Route path="/Login" component={Login} />
           </Switch>
         </div>
