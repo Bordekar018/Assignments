@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ComponentCSS/App.css";
 import Form from "./Components/Form";
 import Login from "./Components/Login";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 
 class App extends Component {
   render() {
