@@ -2,12 +2,20 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 export class UserInfo extends Component {
-  constructor(props) {
-    super(props);
+  getDataFromLocalStorage = () => {
+    let data = localStorage.getItem("StoreInfo");
+    return data;
+  };
 
-    this.state = {};
-  }
+  convertDatajsonIntoObject = () => {
+    let localStorageData = this.getDataFromLocalStorage();
+    return JSON.parse(localStorageData);
+  };
 
+  loginUser = () => {
+    let jsdata = this.convertDatajsonIntoObject();
+    console.log(jsdata);
+  };
   render() {
     return (
       <div className="container">
