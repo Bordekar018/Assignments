@@ -52,7 +52,7 @@ export class Login extends Component {
           alert("Password Does Not Match");
         }
       } else {
-        alert("username does Not Match");
+        alert("Username Does Not Match");
       }
     } else {
       this.validator.showMessages();
