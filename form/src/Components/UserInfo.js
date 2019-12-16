@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 export class UserInfo extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   getDataFromLocalStorage = () => {
     let data = localStorage.getItem("StoreInfo");
     return data;
@@ -12,10 +16,8 @@ export class UserInfo extends Component {
     return JSON.parse(localStorageData);
   };
 
-  loginUser = () => {
-    let jsdata = this.convertDatajsonIntoObject();
-    console.log(jsdata);
-  };
+  jsdata = this.convertDatajsonIntoObject();
+
   render() {
     return (
       <div className="container">
@@ -24,16 +26,16 @@ export class UserInfo extends Component {
           <div className="col-lg-6 groupTogether">
             <h1 className="mainTag">User Information</h1>
             <h4 className="heading">
-              Firstname - {}
+              Firstname - {this.jsdata.firstName}
             </h4>
             <h4 className="heading">
-              Lastname - {}
+              Lastname - {this.jsdata.lastname}
             </h4>
             <h4 className="heading">
-              Contact Number - {}
+              Contact Number - {this.jsdata.phone}
             </h4>
             <h4 className="heading">
-              Email - {}
+              Email - {this.jsdata.email}
             </h4>
           </div>
           <div className="col-lg-3 " />
