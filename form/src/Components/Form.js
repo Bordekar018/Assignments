@@ -95,6 +95,7 @@ class Form extends Component {
       let ConvertoJson = JSON.stringify(StoreJson);
       localStorage.setItem("StoreInfo", ConvertoJson);
       console.log(ConvertoJson);
+      alert("Registered successfully");
     } else {
       this.validator.showMessages();
       this.forceUpdate();
