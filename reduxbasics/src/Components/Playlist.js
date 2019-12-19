@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { SelectedSong } from "../Redux/Actions/songAction";
 class Songlist extends Component {
+  constructor(props) {
+    super(props);
+
+    console.log(props);
+  }
+
   render() {
     return (
       <div className="container">

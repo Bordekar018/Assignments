@@ -25,6 +25,8 @@ const SongList = () => {
 };
 
 const ListDetails = (song = null, action) => {
+  console.log(song, action);
+
   switch (action.type) {
     case "SELECTED_SONG":
       return action.payload;

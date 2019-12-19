@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 const Songdetails = props => {
+  console.log(props);
+
   if (!props.details) {
     return null;
   }
