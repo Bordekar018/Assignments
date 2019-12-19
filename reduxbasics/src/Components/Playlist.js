@@ -23,7 +23,7 @@ class Songlist extends Component {
               <button
                 type="button"
                 className="btn btn-danger btn-md"
-                onClick={() => this.props.SelectedSong(data)}
+                onClick={() => console.log(this.props.SelectedSong(data))}
               >
                 View Details
               </button>
