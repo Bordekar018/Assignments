@@ -1,17 +1,20 @@
 import React, { Component } from "react";
-import { Provider } from "react-redux";
-import store from "./Redux/Store/reduxstore";
-import "./App.css";
-import Playlist from "./Components/Playlist";
-
-export class App extends Component {
+import Songlist from "./components/songlist/songlist.component";
+import Songdetails from "./components/songdetails/songdetails";
+class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <div className="App">
-          <Playlist />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <h1>SONG LIST:</h1>
+            <Songlist />
+          </div>
+          <div className="col-md-6">
+            <Songdetails />
+          </div>
         </div>
-      </Provider>
+      </div>
     );
   }
 }

@@ -1,30 +1,36 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-
-function Playlist(props) {
-  console.log(props);
-
-  return (
-    <div key={props.songReducer.id}>
-      <h1>
-        {/* Playlist:{props.songReducer.map(data => console.log(data))} */}
-        Playlist:{props.songReducer.map(data =>
-          <div key={data.id}>
-            <p>
-              {data.name}
-              {data.duration}
-            </p>
-          </div>
-        )}
-      </h1>
-    </div>
-  );
+import { SelectedSong } from "../../actions/index";
+class Songlist extends Component {
+  render() {
+    return (
+      <div className="container">
+        <div className="row">
+          {this.props.list.map(data =>
+            <div className="col-md-12" key={data.id}>
+              <h3>
+                {data.name}
+              </h3>
+              <p>
+                {data.duration}
+              </p>
+              <button
+                type="button"
+                className="btn btn-danger btn-md"
+                onClick={() => this.props.SelectedSong(data)}
+              >
+                View Details
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 }
-
-const mapstateToprops = state => {
-  return {
-    songReducer: state.songReducer
-  };
+const mapStateToprops = state => {
+  console.log(state);
+  return { list: state.songlist };
 };
 
-export default connect(mapstateToprops)(Playlist);
+export default connect(mapStateToprops, { SelectedSong })(Songlist);

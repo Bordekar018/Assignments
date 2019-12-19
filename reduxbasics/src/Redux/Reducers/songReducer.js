@@ -1,28 +1,37 @@
-import { Show_Songs } from "../Actions/actiontypes";
-export const playlist = [
-  {
-    id: 1,
-    name: "abc",
-    duration: 11
-  },
-  {
-    id: 2,
-    name: "abc",
-    duration: 11
-  },
-  {
-    id: 3,
-    name: "abc",
-    duration: 11
-  }
-];
-export const songReducer = (state = playlist, action) => {
+import { combineReducers } from "redux";
+const SongList = () => {
+  return [
+    {
+      id: 1,
+      name: "Senorita",
+      duration: "4:30"
+    },
+    {
+      id: 2,
+      name: "Girls Like You",
+      duration: "3:30"
+    },
+    {
+      id: 3,
+      name: "Gangnam Style",
+      duration: "4:30"
+    },
+    {
+      id: 4,
+      name: "Shape of you",
+      duration: "4:30"
+    }
+  ];
+};
+
+const ListDetails = (song = null, action) => {
   switch (action.type) {
-    case Show_Songs:
-      return {
-        palylist: state.playlist
-      };
+    case "SELECTED_SONG":
+      return action.payload;
     default:
-      return state;
+      return song;
   }
 };
+
+const reducers = combineReducers({ songlist: SongList, details: ListDetails });
+export default reducers;
