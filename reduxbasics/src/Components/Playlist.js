@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { SelectedSong } from "../../actions/index";
+import { SelectedSong } from "../Redux/Actions/songAction";
 class Songlist extends Component {
   render() {
     return (

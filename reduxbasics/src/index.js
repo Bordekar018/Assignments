@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import reducers from "./reducers/index";
+import reducers from "./Redux/Reducers/songReducer";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 ReactDOM.render(
   <Provider store={createStore(reducers)}>
     <App />

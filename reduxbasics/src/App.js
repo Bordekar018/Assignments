@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Songlist from "./components/songlist/songlist.component";
-import Songdetails from "./components/songdetails/songdetails";
+import Songlist from "./Components/Playlist";
+import Songdetails from "./Components/songDetails";
 class App extends Component {
   render() {
     return (
