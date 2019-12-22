@@ -1,7 +1,7 @@
+import axios from "axios";
 export const FETCH_USERS_REQUEST = "FETCH_USERS_REQUEST";
 export const FETCH_USERS_REQUEST_SUCCESS = "FETCH_USERS_REQUEST_SUCCESS";
 export const FETCH_USERS_ERROR = "FETCH_USERS_ERROR";
-import axios from "axios";
 
 export const FETCH_USERS_REQUESTAC = () => {
   return {

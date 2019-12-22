@@ -1,7 +1,17 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { FetchUserData } from "../redux/Action/action";
 
-function UserList() {
-  return <div>Hii</div>;
+export class UserList extends Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    this.props.FetchUserData();
+  }
+  render() {
+    return <div />;
+  }
 }
 
-export default UserList;
+export default connect(null, { FetchUserData })(UserList);
