@@ -18,9 +18,11 @@ export class UserList extends Component {
       <React.Fragment>
         Hii
         {this.props.UserData.map(data =>
-          <li>
-            {data.username}
-          </li>
+          <React.Fragment key={data.id}>
+            <li>
+              {data.username}
+            </li>
+          </React.Fragment>
         )}
       </React.Fragment>
     );
