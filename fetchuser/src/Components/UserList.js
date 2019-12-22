@@ -10,16 +10,18 @@ export class UserList extends Component {
     this.props.FetchUserData();
   }
   render() {
-    console.log(this.props.UserData);
+    if (!this.props.UserData) {
+      return null;
+    }
 
     return (
       <React.Fragment>
         Hii
-        {/* {this.data.map(data =>
+        {this.props.UserData.map(data =>
           <li>
-            {data.name}
+            {data.username}
           </li>
-        )} */}
+        )}
       </React.Fragment>
     );
   }
