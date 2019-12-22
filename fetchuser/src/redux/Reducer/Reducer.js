@@ -21,7 +21,7 @@ const Reducer = (state = initialState, action) => {
       };
     case FETCH_USERS_REQUEST_SUCCESS:
       return {
-        loading: true,
+        loading: false,
         UserList: action.payload,
         error: ""
       };

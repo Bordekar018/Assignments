@@ -10,8 +10,22 @@ export class UserList extends Component {
     this.props.FetchUserData();
   }
   render() {
-    return <div />;
+    console.log(this.props.UserData);
+
+    return (
+      <React.Fragment>
+        Hii
+        {/* {this.data.map(data =>
+          <li>
+            {data.name}
+          </li>
+        )} */}
+      </React.Fragment>
+    );
   }
 }
-
-export default connect(null, { FetchUserData })(UserList);
+const SendStateToProps = state => {
+  console.log(state.UserList);
+  return { UserData: state.UserList };
+};
+export default connect(SendStateToProps, { FetchUserData })(UserList);
