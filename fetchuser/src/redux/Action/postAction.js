@@ -9,10 +9,10 @@ export const FETCH_POST_REQUESTAC = () => {
   };
 };
 
-export const FETCH_POST_REQUEST_SUCCESSAC = UsersList => {
+export const FETCH_POST_REQUEST_SUCCESSAC = PostList => {
   return {
     type: FETCH_POST_REQUEST_SUCCESS,
-    payload: UsersList
+    payload: PostList
   };
 };
 
@@ -27,10 +27,10 @@ export const FetchPostData = () => {
   return function(dispatch) {
     dispatch(FETCH_POST_REQUESTAC());
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("https://jsonplaceholder.typicode.com/posts?_limit=10")
       .then(response => {
-        const users = response.data.map(data => data);
-        dispatch(FETCH_POST_REQUEST_SUCCESSAC(users));
+        const posts = response.data.map(data => data);
+        dispatch(FETCH_POST_REQUEST_SUCCESSAC(posts));
       })
       .catch(error => dispatch(FETCH_POST_ERRORAC(error.message)));
   };
