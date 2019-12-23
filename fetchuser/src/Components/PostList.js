@@ -18,11 +18,17 @@ export class PostList extends Component {
     return (
       <React.Fragment>
         {this.props.UserPost.map(data =>
-          <React.Fragment key={data.id}>
-            <li>
-              {data.title}
-            </li>
-          </React.Fragment>
+          <div className="card" key={data.id}>
+            <div className="card-body">
+              <h5 className="card-title">
+                Blog {data.id}
+              </h5>
+              <p className="card-text">
+                {data.title}
+              </p>
+              <button className="btn btn-primary">See Author</button>
+            </div>
+          </div>
         )}
       </React.Fragment>
     );
