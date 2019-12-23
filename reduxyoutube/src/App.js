@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import Logo from "./Uploads/Logo.png";
 import "./App.css";
-import YouTubeSearchBox from "./Components/YouTubeSearchBox";
 import Playlist from "./Components/Playlist";
 import Player from "./Components/Player";
+import YoutubeSearch from "./Components/YouTubeSearchBox";
 
 export class App extends Component {
+  submit = values => {
+    console.log(values);
+  };
   render() {
     return (
       <div className="container-fluid">
@@ -17,7 +20,8 @@ export class App extends Component {
             </div>
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 ">
-            <YouTubeSearchBox />
+            {}
+            <YoutubeSearch onSubmit={this.submit} />
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 " />
         </div>

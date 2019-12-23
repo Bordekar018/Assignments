@@ -1,42 +1,34 @@
 import React, { Component } from "react";
 import searchIcon from "../Uploads/searchIcon.png";
+import { Field, reduxForm } from "redux-form";
 
 export class YouTubeSearchBox extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      input: "",
-      youtubeVideoList: []
-    };
-  }
-  getInput = e => {
-    this.setState({ input: e.target.value });
-    //console.log(e.target.value)
-  };
-
   render() {
     return (
-      <div className="input-group mb-3 searchBox">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search"
-          value={this.state.input}
-          onChange={this.getInput}
-        />
-        <div className="input-group-append SearchDiv">
-          <button
-            className="btn btn-outline-secondary btnSearch"
-            type="button"
-            id="button-addon2"
-          >
-            <img src={searchIcon} className="btnImg" alt="YouTube" />
-          </button>
+      <form onSubmit={this.props.handleSubmit}>
+        <div className="input-group mb-3 searchBox">
+          <Field
+            className="form-control"
+            name="search" //name: You Can Access Search Field Using This....
+            placeholder="Search"
+            component="input"
+            type="text"
+          />
+          <div className="input-group-append SearchDiv">
+            <button
+              className="btn btn-outline-secondary btnSearch"
+              type="submit"
+              id="button-addon2"
+            >
+              <img src={searchIcon} className="btnImg" alt="YouTube" />
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
     );
   }
 }
-
-export default YouTubeSearchBox;
+const YoutubeSearch = reduxForm({
+  form: "Youtube" //Reference "Form Name" ....
+})(YouTubeSearchBox);
+export default YoutubeSearch;
