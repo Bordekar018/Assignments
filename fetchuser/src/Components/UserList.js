@@ -16,7 +16,6 @@ export class UserList extends Component {
 
     return (
       <React.Fragment>
-        Hii
         {this.props.UserData.map(data =>
           <React.Fragment key={data.id}>
             <li>
@@ -29,7 +28,7 @@ export class UserList extends Component {
   }
 }
 const SendStateToProps = state => {
-  console.log(state.UserList);
-  return { UserData: state.UserList };
+  console.log(state.UserFetchList.UserList);
+  return { UserData: state.UserFetchList.UserList };
 };
 export default connect(SendStateToProps, { FetchUserData })(UserList);
