@@ -3,12 +3,9 @@ import Logo from "./Uploads/Logo.png";
 import "./App.css";
 import Playlist from "./Components/Playlist";
 import Player from "./Components/Player";
-import YoutubeSearch from "./Components/YouTubeSearchBox";
+import { YoutubeSearch } from "./Components/YouTubeSearchBox";
 
 export class App extends Component {
-  submit = values => {
-    console.log(values);
-  };
   render() {
     return (
       <div className="container-fluid">
@@ -20,7 +17,7 @@ export class App extends Component {
             </div>
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 ">
-            <YoutubeSearch onSubmit={this.submit} />
+            <YoutubeSearch />
           </div>
           <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 " />
         </div>

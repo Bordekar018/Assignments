@@ -3,9 +3,12 @@ import searchIcon from "../Uploads/searchIcon.png";
 import { Field, reduxForm } from "redux-form";
 
 export class YouTubeSearchBox extends Component {
+  submit = values => {
+    console.log(values);
+  };
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit}>
+      <form onSubmit={this.props.handleSubmit(this.submit)}>
         <div className="input-group mb-3 searchBox">
           <Field
             className="form-control"
@@ -28,7 +31,6 @@ export class YouTubeSearchBox extends Component {
     );
   }
 }
-const YoutubeSearch = reduxForm({
+export const YoutubeSearch = reduxForm({
   form: "Youtube" //Reference "Form Name" ....
 })(YouTubeSearchBox);
-export default YoutubeSearch;
