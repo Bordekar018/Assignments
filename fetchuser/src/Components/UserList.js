@@ -26,8 +26,6 @@ export class UserList extends Component {
   }
 }
 const SendStateToProps = state => {
-  console.log(state.UserFetchList.UserList);
-
   return {
     UserData: state.UserFetchList.UserList
   };
