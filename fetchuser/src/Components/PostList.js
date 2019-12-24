@@ -4,9 +4,6 @@ import { FetchPostData } from "../redux/Action/postAction";
 import { FetchUserData } from "../redux/Action/action";
 import UserList from "./UserList";
 export class PostList extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     this.props.FetchPostData();
   }
