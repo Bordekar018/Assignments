@@ -29,7 +29,7 @@ export const FetchUserData = id => {
     axios
       .get(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then(response => {
-        dispatch(FETCH_USERS_REQUEST_SUCCESSAC(response));
+        dispatch(FETCH_USERS_REQUEST_SUCCESSAC(response.data));
       })
       .catch(error => dispatch(FETCH_USERS_ERRORAC(error.message)));
   };

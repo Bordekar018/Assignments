@@ -17,7 +17,7 @@ export class UserList extends Component {
       <div className="container">
         <div className="row">
           <h1>
-            {this.props.UserData.id}
+            {this.props.UserData.name}
           </h1>
         </div>
       </div>
@@ -25,6 +25,8 @@ export class UserList extends Component {
   }
 }
 const SendStateToProps = state => {
+  console.log(state);
+
   return {
     UserData: state.UserFetchList.UserList
   };
