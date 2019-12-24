@@ -9,7 +9,8 @@ export class UserList extends Component {
     this.props.FetchUserData(this.props.id);
   }
   showAuthor = () => {
-    console.log(this.props.UserData);
+    document.getElementById("tp").innerHTML = this.props.UserData.name;
+    console.log(this.props.UserData.name);
   };
   render() {
     if (!this.props.UserData) {
@@ -18,9 +19,7 @@ export class UserList extends Component {
 
     return (
       <React.Fragment>
-        <h1>
-          {this.props.UserData.name}
-        </h1>
+        <h1 id="tp" />
         <button
           type="button"
           className="btn btn-info"
