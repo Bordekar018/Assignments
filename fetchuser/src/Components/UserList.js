@@ -6,6 +6,7 @@ export class UserList extends Component {
     super(props);
   }
   componentDidMount() {
+    //this.props.FetchUserData(this.props.id)
     this.props.FetchUserData(this.props.id);
   }
   /* showAuthor = () => {
