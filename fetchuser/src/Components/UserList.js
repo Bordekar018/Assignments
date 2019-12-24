@@ -8,25 +8,37 @@ export class UserList extends Component {
   componentDidMount() {
     this.props.FetchUserData(this.props.id);
   }
-  showAuthor = () => {
-    document.getElementById("tp").innerHTML = this.props.UserData.name;
-    console.log(this.props.UserData.name);
-  };
+  /* showAuthor = () => {
+    document.getElementById("tp").innerHTML = this.props.UserData.name
+    console.log(this.props.UserData.name)
+  } */
+
   render() {
     if (!this.props.UserData) {
       return null;
     }
+    /* return  (
+      <div className="row">
+        <div className="col-lg-6 col-md-6 col-sm-12">
+          <button
+            type="button"
+            className="btn btn-info"
+            onClick={this.showAuthor}
+          >
+            See Author
+          </button>
+        </div>
+        <div className="col-lg-6 col-md-6 col-sm-12">
+          <h3 id="tp" />
+        </div>
+      </div>
+    ) */
 
     return (
       <React.Fragment>
-        <h1 id="tp" />
-        <button
-          type="button"
-          className="btn btn-info"
-          onClick={this.showAuthor}
-        >
-          See Author
-        </button>
+        <h3>
+          {this.props.UserData.name}
+        </h3>
       </React.Fragment>
     );
   }
