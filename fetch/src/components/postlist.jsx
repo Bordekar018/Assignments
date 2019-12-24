@@ -18,8 +18,9 @@ class Postlist extends Component {
               <p>
                 BODY:{item.body}
               </p>
-              <hr />
+
               <Postuser id={item.id} />
+              <hr />
             </div>
           )}
         </div>
