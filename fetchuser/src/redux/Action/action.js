@@ -23,11 +23,11 @@ export const FETCH_USERS_ERRORAC = error => {
   };
 };
 
-export const FetchUserData = id => {
+export const FetchUserData = () => {
   return function(dispatch) {
     dispatch(FETCH_USERS_REQUESTAC());
     axios
-      .get(`https://jsonplaceholder.typicode.com/users/${id}`)
+      .get(`https://jsonplaceholder.typicode.com/users/`)
       .then(response => {
         dispatch(FETCH_USERS_REQUEST_SUCCESSAC(response.data));
       })
