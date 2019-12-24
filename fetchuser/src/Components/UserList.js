@@ -10,8 +10,8 @@ export class UserList extends Component {
     this.props.FetchUserData(this.props.id);
   }
   render() {
-    if (this.props.UserData === undefined) {
-      return <h1>Loading....</h1>;
+    if (!this.props.UserData) {
+      return null;
     }
     return (
       <div className="container">
