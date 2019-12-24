@@ -9,10 +9,10 @@ export const FETCH_USERS_REQUESTAC = () => {
   };
 };
 
-export const FETCH_USERS_REQUEST_SUCCESSAC = UsersList => {
+export const FETCH_USERS_REQUEST_SUCCESSAC = data => {
   return {
     type: FETCH_USERS_REQUEST_SUCCESS,
-    payload: UsersList
+    payload: data
   };
 };
 
