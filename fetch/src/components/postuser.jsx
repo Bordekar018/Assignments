@@ -6,7 +6,7 @@ class Postuser extends Component {
     super();
   }
   componentDidMount() {
-    this.props.fetchuserslist(this.props.id);
+    this.props.fetchuserslist();
   }
   render() {
     if (!this.props.user) {
@@ -24,7 +24,8 @@ class Postuser extends Component {
   }
 }
 const mapStateToProps = (state, ownprops) => {
-  console.log(state, ownprops);
+  console.log(state.postuser, ownprops);
+
   return { user: state.postuser.find(item => item.id === ownprops.id) };
 };
 
