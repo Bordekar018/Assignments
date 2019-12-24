@@ -4,7 +4,7 @@ import { FetchUserData } from "../redux/Action/action";
 export class UserList extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    //console.log(props);
   }
   componentDidMount() {
     this.props.FetchUserData(this.props.id);
@@ -24,11 +24,15 @@ export class UserList extends Component {
     );
   }
 }
-const SendStateToProps = state => {
-  console.log(state);
+const SendStateToProps = (state, ownProps) => {
+  //console.log(state, ownProps);
+  console.log(state.PostFetchList.PostList);
+  console.log(state.UserFetchList.UsersList);
 
   return {
-    UserData: state.UserFetchList.UserList
+    UserData: state.UserFetchList.UsersList.find(
+      item => item.id === ownProps.id
+    )
   };
 };
 export default connect(SendStateToProps, { FetchUserData })(UserList);

@@ -11,7 +11,6 @@ const initialState = {
 };
 
 const Reducer = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case FETCH_USERS_REQUEST:
       return {
@@ -21,9 +20,10 @@ const Reducer = (state = initialState, action) => {
     case FETCH_USERS_REQUEST_SUCCESS:
       return {
         loading: false,
-        UserList: action.payload,
+        UsersList: [action.payload],
         error: ""
       };
+
     case FETCH_USERS_ERROR:
       return {
         loading: false,

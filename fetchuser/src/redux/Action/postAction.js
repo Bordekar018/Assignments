@@ -29,8 +29,7 @@ export const FetchPostData = () => {
     axios
       .get("https://jsonplaceholder.typicode.com/posts?_limit=10")
       .then(response => {
-        const posts = response.data.map(data => data);
-        dispatch(FETCH_POST_REQUEST_SUCCESSAC(posts));
+        dispatch(FETCH_POST_REQUEST_SUCCESSAC(response.data));
       })
       .catch(error => dispatch(FETCH_POST_ERRORAC(error.message)));
   };
