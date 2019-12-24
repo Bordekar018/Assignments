@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const PostReducer = (state = initialState, action) => {
-  console.log(action);
+  //console.log(action);
 
   switch (action.type) {
     case FETCH_POST_REQUEST:

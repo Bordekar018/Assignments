@@ -7,14 +7,11 @@ export class UserList extends Component {
     console.log(props);
   }
   componentDidMount() {
-    if (!this.props.UserData) {
-      return null;
-    }
     this.props.FetchUserData(this.props.id);
   }
   render() {
-    if (!this.props.UserData) {
-      return null;
+    if (this.props.UserData === undefined) {
+      return <h1>Loading....</h1>;
     }
     return (
       <div className="container">
@@ -28,8 +25,6 @@ export class UserList extends Component {
   }
 }
 const SendStateToProps = state => {
-  console.log(state);
-
   return {
     UserData: state.UserFetchList.UserList
   };
