@@ -1,21 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ParticularVideo from "./ParticularVideo";
 
-export class Playlist extends Component {
+class Playlist extends Component {
   render() {
-    if (typeof youtubeVideos == "undefined") {
+    console.log(this.props);
+    if (!this.props.youtubeVideos) {
       return null;
     }
     return (
-      <React.Fragment>
+      <div>
         {this.props.youtubeVideos.map(whatEverData =>
-          <ParticularVideo
-            Ukey={whatEverData.id.videoId}
-            PassedDataToThisComponent={whatEverData}
-          />
+          <div className="card text-left" key={whatEverData.id}>
+            <img
+              className="card-img-top"
+              src={whatEverData.snippet}
+              alt="Thumb"
+            />
+            <div className="card-body a">
+              <h6 className="card-title">
+                {whatEverData.snippet}
+              </h6>
+              <p className="card-text">
+                {whatEverData.snippet}
+              </p>
+            </div>
+          </div>
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }

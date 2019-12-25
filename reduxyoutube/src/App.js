@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Logo from "./Uploads/Logo.png";
 import "./App.css";
-import Playlist from "./Components/Playlist";
+
 import Player from "./Components/Player";
 import YouTubeSearchBox from "./Components/YouTubeSearchBox";
+import Playlist from "./Components/Playlist";
 
 export class App extends Component {
   render() {
