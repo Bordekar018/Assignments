@@ -8,11 +8,11 @@ export const reducer = (state = [], action) => {
   }
 };
 
+//Reducer To State Of Current Video
 export const playReducer = (state = null, action) => {
-  //change
   switch (action.type) {
     case "play_That_Video":
-      return action.payload;
+      return action.payload; //changed.
 
     default:
       return state;

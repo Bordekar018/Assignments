@@ -17,8 +17,9 @@ export const Fetch_Videos_API = aim => {
   };
 };
 
+//Action To Store State of Clicked Video Using "onClick".
 export const playVideo = state => {
   return async function(dispatch) {
-    dispatch({ type: "play_That_Video", payload: state }); //change
+    dispatch({ type: "play_That_Video", payload: state }); //changed
   };
 };

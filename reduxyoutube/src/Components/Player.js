@@ -12,7 +12,7 @@ export class Player extends Component {
           <iframe
             className="tubeplayer"
             src={`https://www.youtube.com/embed/${this.props.particularVideo.id
-              .videoId}`} //changed
+              .videoId}`} //changed.
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -27,7 +27,7 @@ export class Player extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state.playVideo);
+  console.log(state.playVideo); //Update
   return {
     particularVideo: state.playVideo
   };
