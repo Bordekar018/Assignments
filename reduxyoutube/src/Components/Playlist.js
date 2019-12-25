@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { playVideo } from "../Redux/Action/YoutubeAPiAction";
 
 class Playlist extends Component {
   render() {
@@ -15,6 +16,7 @@ class Playlist extends Component {
             <img
               className="card-img-top"
               src={whatEverData.snippet.thumbnails.high.url}
+              onClick={() => this.props.playVideo(whatEverData)}
             />
             <div className="card-body a">
               <h6 className="card-title">
@@ -36,4 +38,4 @@ const mapStateToProps = state => {
     youtubeVideos: state.videolist.items
   };
 };
-export default connect(mapStateToProps)(Playlist);
+export default connect(mapStateToProps, { playVideo })(Playlist);

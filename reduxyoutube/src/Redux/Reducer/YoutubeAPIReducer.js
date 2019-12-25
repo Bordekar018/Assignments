@@ -8,7 +8,7 @@ export const reducer = (state = [], action) => {
   }
 };
 
-export const playReducer = (state = [], action) => {
+export const playReducer = (state = null, action) => {
   switch (action.type) {
     case "play_That_Video":
       return action.payload;

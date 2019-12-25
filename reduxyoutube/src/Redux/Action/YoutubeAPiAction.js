@@ -17,9 +17,8 @@ export const Fetch_Videos_API = aim => {
   };
 };
 
-export const playVideo = videoid => {
+export const playVideo = state => {
   return async function(dispatch) {
-    let response = await axios.get(`https://www.youtube.com/embed/${videoid}`);
-    dispatch({ type: "play_That_Video", payload: response });
+    dispatch({ type: "play_That_Video", payload: state });
   };
 };
