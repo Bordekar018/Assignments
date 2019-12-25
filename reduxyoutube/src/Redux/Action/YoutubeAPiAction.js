@@ -7,7 +7,7 @@ export const Fetch_Videos_API = aim => {
       {
         params: {
           part: "snippet",
-          maxResults: 10,
+          maxResults: 5,
           q: aim,
           pageToken: "AIzaSyBoDOoA-VMyTS7cnjzuyZgn-kzUl8yLckk"
         }

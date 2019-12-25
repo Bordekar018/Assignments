@@ -47,7 +47,7 @@ export class YouTubeSearchBox extends Component {
 }
 
 const mapStateToProps = state => {
-  //console.log(state.videoliist.youtubeVideoList)
+  //console.log(state.videolist.items)
   return {
     youtubeVideos: state
   };
