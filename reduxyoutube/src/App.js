@@ -3,7 +3,7 @@ import Logo from "./Uploads/Logo.png";
 import "./App.css";
 import Playlist from "./Components/Playlist";
 import Player from "./Components/Player";
-import YouTubeSearchBox, { YoutubeSearch } from "./Components/YouTubeSearchBox";
+import YouTubeSearchBox from "./Components/YouTubeSearchBox";
 
 export class App extends Component {
   render() {

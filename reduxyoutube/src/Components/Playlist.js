@@ -1,22 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ParticularVideo from "./particularVideo";
+import ParticularVideo from "./ParticularVideo";
 
 export class Playlist extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     if (typeof youtubeVideos == "undefined") {
       return null;
     }
     return (
       <React.Fragment>
-        <ParticularVideo
-          Ukey={this.props.youtubeVideos.id.videoId}
-          PassedDataToThisComponent={this.props.youtubeVideos}
-        />
+        {this.props.youtubeVideos.map(whatEverData =>
+          <ParticularVideo
+            Ukey={whatEverData.id.videoId}
+            PassedDataToThisComponent={whatEverData}
+          />
+        )}
       </React.Fragment>
     );
   }
