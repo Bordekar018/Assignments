@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class ParticularVideo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     console.log(this.props);
 
@@ -14,6 +10,7 @@ class ParticularVideo extends Component {
         <img
           className="card-img-top"
           src={this.pc.snippet.thumbnails.high.url}
+          alt="Thumb"
         />
         <div className="card-body a">
           <h6 className="card-title">
