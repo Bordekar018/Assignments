@@ -16,7 +16,7 @@ class Playlist extends Component {
             <img
               className="card-img-top"
               src={whatEverData.snippet.thumbnails.high.url}
-              onClick={() => this.props.playVideo(whatEverData)}
+              onClick={() => this.props.playVideo(whatEverData)} //Changed
             />
             <div className="card-body a">
               <h6 className="card-title">

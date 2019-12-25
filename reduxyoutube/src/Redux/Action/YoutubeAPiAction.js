@@ -19,6 +19,6 @@ export const Fetch_Videos_API = aim => {
 
 export const playVideo = state => {
   return async function(dispatch) {
-    dispatch({ type: "play_That_Video", payload: state });
+    dispatch({ type: "play_That_Video", payload: state }); //change
   };
 };
