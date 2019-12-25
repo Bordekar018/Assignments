@@ -13,7 +13,7 @@ export class YouTubeSearchBox extends Component {
 
   searchVideo = e => {
     this.setState({ searchField: e.target.value });
-    console.log(e.target.value);
+    //console.log(e.target.value)
   };
 
   getVideos = e => {
@@ -46,8 +46,7 @@ export class YouTubeSearchBox extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
-
+  //console.log(state.videoliist.youtubeVideoList)
   return {
     youtubeVideos: state
   };
