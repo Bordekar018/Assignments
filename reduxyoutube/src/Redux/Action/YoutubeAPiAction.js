@@ -16,3 +16,10 @@ export const Fetch_Videos_API = aim => {
     dispatch({ type: "FETCH_VIDEO_REQUEST_SUCCESS", payload: response.data });
   };
 };
+
+export const playVideo = videoid => {
+  return async function(dispatch) {
+    let response = await axios.get(`https://www.youtube.com/embed/${videoid}`);
+    dispatch({ type: "play_That_Video", payload: response });
+  };
+};

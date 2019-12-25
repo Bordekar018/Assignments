@@ -1,9 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import reducer from "../Reducer/YoutubeAPIReducer";
+import { reducer, playReducer } from "../Reducer/YoutubeAPIReducer";
 import thunk from "redux-thunk";
 
 const RootReducer = combineReducers({
-  videolist: reducer //Got Error Here
+  videolist: reducer, //Got Error Here
+  playVideo: playReducer
 });
 
 const store = createStore(RootReducer, applyMiddleware(thunk));
