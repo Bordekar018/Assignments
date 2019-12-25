@@ -23,10 +23,22 @@ export function FETCH_VIDEO_REQUEST_ERRORAC(error) {
   };
 }
 
-export const Fetch_Videos_API = () => {
+export const Fetch_Videos_API = aim => {
   return function(dispatch) {
-    axios.get(
-      `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBoDOoA-VMyTS7cnjzuyZgn-kzUl8yLckk`
-    );
+    axios
+      .get(
+        `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBoDOoA-VMyTS7cnjzuyZgn-kzUl8yLckk`,
+        {
+          params: {
+            part: "snippet",
+            maxResults: 10,
+            q: aim,
+            pageToken: "AIzaSyBoDOoA-VMyTS7cnjzuyZgn-kzUl8yLckk"
+          }
+        }
+      )
+      .then(response =>
+        dispatch(FETCH_VIDEO_REQUEST_SUCCESSAC(response.data.items))
+      );
   };
 };
