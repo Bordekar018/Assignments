@@ -1,25 +1,35 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 export class Player extends Component {
   render() {
+    if (!this.props.particularVideo) {
+      return null;
+    }
     return (
       <React.Fragment>
-        {/* <div className="embed-responsive embed-responsive-21by9">
+        <div className="embed-responsive embed-responsive-21by9">
           <iframe
             className="tubeplayer"
-            src={`https://www.youtube.com/embed/${videoOnOnClick.id.videoId}`}
+            src={`https://www.youtube.com/embed/${this.props.particularVideo.id
+              .videoId}`}
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
         </div>
         <h5 className="title">
-          {videoOnOnClick.snippet.title}
+          {this.props.particularVideo.snippet.title}
         </h5>
-        <hr className="line" /> */}
+        <hr className="line" />
       </React.Fragment>
     );
   }
 }
-
-export default Player;
+const mapStateToProps = state => {
+  console.log(state.playVideo);
+  return {
+    particularVideo: state.playVideo
+  };
+};
+export default connect(mapStateToProps)(Player);
