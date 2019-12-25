@@ -5,7 +5,7 @@ export class Player extends Component {
   render() {
     if (!this.props.particularVideo) {
       return null;
-    }
+    } //For "Undefined".
     return (
       <React.Fragment>
         <div className="embed-responsive embed-responsive-21by9">
@@ -28,7 +28,7 @@ export class Player extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state.playVideo); //Update
+  console.log(state.playVideo); //Update.
   return {
     particularVideo: state.playVideo
   };

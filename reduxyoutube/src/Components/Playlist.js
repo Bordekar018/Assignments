@@ -36,7 +36,7 @@ class Playlist extends Component {
 const mapStateToProps = state => {
   console.log(state.videolist.items);
   return {
-    youtubeVideos: state.videolist.items
+    youtubeVideos: state.videolist.items //To Fetch Data From Store.
   };
 };
 export default connect(mapStateToProps, { playVideo })(Playlist);

@@ -19,7 +19,7 @@ export class YouTubeSearchBox extends Component {
     this.getVideos();
   }
   getVideos = () => {
-    this.props.Fetch_Videos_API(this.state.searchField);
+    this.props.Fetch_Videos_API(this.state.searchField); //Reducer.
   };
   render() {
     return (
