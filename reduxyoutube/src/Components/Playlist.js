@@ -31,7 +31,7 @@ class Playlist extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state.videolist.items);
+  //console.log(state.videolist.items)
   return {
     youtubeVideos: state.videolist.items
   };
