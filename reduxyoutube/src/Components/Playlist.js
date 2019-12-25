@@ -10,7 +10,21 @@ class Playlist extends Component {
     return (
       <div>
         {this.props.youtubeVideos.map(whatEverData =>
-          console.log(whatEverData.id.videoId)
+          //console.log(whatEverData.id.videoId)
+          <div className="card text-left" key={whatEverData.id.videoId}>
+            <img
+              className="card-img-top"
+              src={whatEverData.snippet.thumbnails.high.url}
+            />
+            <div className="card-body a">
+              <h6 className="card-title">
+                {whatEverData.snippet.title}
+              </h6>
+              <p className="card-text">
+                {whatEverData.snippet.channelTitle}
+              </p>
+            </div>
+          </div>
         )}
       </div>
     );
