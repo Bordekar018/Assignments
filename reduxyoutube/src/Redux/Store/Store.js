@@ -3,7 +3,7 @@ import reducer from "../Reducer/YoutubeAPIReducer";
 import thunk from "redux-thunk";
 
 const RootReducer = combineReducers({
-  videoliist: reducer
+  videolist: reducer
 });
 
 const store = createStore(RootReducer, applyMiddleware(thunk));

@@ -15,9 +15,10 @@ export class YouTubeSearchBox extends Component {
     this.setState({ searchField: e.target.value });
     //console.log(e.target.value)
   };
-
-  getVideos = e => {
-    e.preventDefault();
+  componentDidMount() {
+    this.getVideos();
+  }
+  getVideos = () => {
     this.props.Fetch_Videos_API(this.state.searchField);
   };
   render() {

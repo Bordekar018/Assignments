@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 class Playlist extends Component {
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     if (!this.props.youtubeVideos) {
       return null;
     }
@@ -31,9 +31,9 @@ class Playlist extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state.videoliist.youtubeVideoList);
+  console.log(state.videolist);
   return {
-    youtubeVideos: state.videoliist.youtubeVideoList
+    youtubeVideos: state.videolist
   };
 };
 export default connect(mapStateToProps)(Playlist);
