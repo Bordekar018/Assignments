@@ -13,6 +13,7 @@ export class Player extends Component {
             className="tubeplayer"
             src={`https://www.youtube.com/embed/${this.props.particularVideo.id
               .videoId}`} //changed.
+            title="YouTubeFrame"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

@@ -15,6 +15,7 @@ class Playlist extends Component {
           <div className="card text-left" key={whatEverData.id.videoId}>
             <img
               className="card-img-top"
+              alt="Thumbnail"
               src={whatEverData.snippet.thumbnails.high.url}
               onClick={() => this.props.playVideo(whatEverData)} //Update For Play Video.
             />
@@ -33,7 +34,7 @@ class Playlist extends Component {
   }
 }
 const mapStateToProps = state => {
-  //console.log(state.videolist.items)
+  console.log(state.videolist.items);
   return {
     youtubeVideos: state.videolist.items
   };
