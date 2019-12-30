@@ -26,7 +26,7 @@ function CalculatorUI(props) {
               type="button"
               className="btn btn-default btn-block btnsuccess"
               id="btnSubmit"
-              onClick={() => props.CalculateAge(props.getDate)}
+              onClick={props.CalculateAge}
             >
               Calculate
             </button>
