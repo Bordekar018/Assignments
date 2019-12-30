@@ -6,7 +6,9 @@ export class Calculator extends Component {
 
     this.state = {
       dateInput: "",
-      ageOP: 0
+      yearOP: 0,
+      monthOP: 0,
+      dayOP: 0
     };
   }
   setDate = e => {
@@ -15,8 +17,21 @@ export class Calculator extends Component {
   calAge = date => {
     let dateObj = new Date();
     let convertedAgeToString = date.toString();
-    let sliceConvertedString = convertedAgeToString.slice(0, 4);
-    this.setState({ ageOP: dateObj.getFullYear() - sliceConvertedString });
+    let sliceConvertedYear = convertedAgeToString.slice(0, 4);
+    let sliceConvertedMonth = convertedAgeToString.slice(5, 7);
+    let sliceConvertedDay = convertedAgeToString.slice(8, 10);
+    let convertYear = dateObj.getFullYear() - sliceConvertedYear;
+    let convertMonth = dateObj.getMonth() + 1 - sliceConvertedMonth;
+    let convertDay = dateObj.getDate() - sliceConvertedDay;
+    console.log(convertedAgeToString.slice(0, 4));
+    console.log(convertedAgeToString.slice(5, 7));
+    console.log(convertedAgeToString.slice(8, 10));
+    console.log(dateObj.getFullYear());
+    console.log(dateObj.getMonth() + 1);
+    console.log(dateObj.getDate());
+    this.setState({ yearOP: convertYear });
+    this.setState({ monthOP: convertMonth });
+    this.setState({ dayOP: convertDay });
   };
 
   render() {
@@ -49,7 +64,10 @@ export class Calculator extends Component {
               </button>
               <div className="form-group op">
                 <label id="lblhead">
-                  Your age is...<h3>{this.state.ageOP}</h3>
+                  Your age is...<h3>
+                    {this.state.yearOP} years, {this.state.monthOP} months,{" "}
+                    {this.state.dayOP} days
+                  </h3>
                 </label>
               </div>
             </form>
