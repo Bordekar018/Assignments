@@ -1,0 +1,45 @@
+import React, { Component } from "react";
+
+export class Calculator extends Component {
+  render() {
+    return (
+      <div className="container-fluid backGroundC">
+        <div className="row">
+          <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 emptyContainer" />
+
+          <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <form className="loginContainer">
+              <div className="form-group">
+                <label for="formGroupExampleInput" className="lbldesc">
+                  What's your age??
+                </label>
+                <input
+                  type="date"
+                  className="form-control"
+                  id="txtInputBirthDate"
+                  placeholder="Enter Age"
+                />
+              </div>
+              <button
+                type="button"
+                className="btn btn-default btn-block btnsuccess"
+                id="btnSubmit"
+                onclick="onSubmitButtonEvent()"
+              >
+                Calculate
+              </button>
+              <div className="form-group op">
+                <label id="lblhead">Your age is...</label>
+                <label id="lblAgeOP" />
+              </div>
+            </form>
+          </div>
+
+          <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 emptyContainer" />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Calculator;
