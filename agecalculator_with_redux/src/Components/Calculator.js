@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { calculateAge } from "../Redux/Action/CalculatorAction";
+import { connect } from "react-redux";
 
 export class Calculator extends Component {
   constructor(props) {
@@ -40,7 +42,7 @@ export class Calculator extends Component {
                 type="button"
                 className="btn btn-default btn-block btnsuccess"
                 id="btnSubmit"
-                //onClick={props.CalculateAge}
+                onClick={() => this.props.calculateAge(this.state.getInput)}
               >
                 Calculate
               </button>
@@ -61,4 +63,10 @@ export class Calculator extends Component {
   }
 }
 
-export default Calculator;
+let mapStateToProps = state => {
+  console.log(state);
+
+  return state;
+};
+
+export default connect(mapStateToProps, { calculateAge })(Calculator);
