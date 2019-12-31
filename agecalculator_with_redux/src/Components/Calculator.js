@@ -49,7 +49,9 @@ export class Calculator extends Component {
               <div className="form-group op">
                 <label id="lblhead">
                   Your age is...<h3>
-                    {/* {props.year} years, {props.month} months, {props.day} days */}
+                    {this.props.CalculatedYear[0]} years,{" "}
+                    {this.props.CalculatedYear[1]} months,{" "}
+                    {this.props.CalculatedYear[2]} days
                   </h3>
                 </label>
               </div>
@@ -66,7 +68,9 @@ export class Calculator extends Component {
 let mapStateToProps = state => {
   console.log(state);
 
-  return state;
+  return {
+    CalculatedYear: state.year
+  };
 };
 
 export default connect(mapStateToProps, { calculateAge })(Calculator);
