@@ -1,7 +1,21 @@
 import React, { Component } from "react";
 
 export class Calculator extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      getInput: ""
+    };
+  }
+
+  getInputOnChange = e => {
+    this.setState({ getInput: e.target.value });
+  };
+
   render() {
+    console.log(typeof this.state.getInput);
+
     return (
       <div className="container-fluid backGroundC">
         <div className="row">
@@ -17,8 +31,9 @@ export class Calculator extends Component {
                   type="date"
                   className="form-control"
                   id="txtInputBirthDate"
-                  //value={props.getDate}
-                  // onChange={props.changeDate}
+                  name="age"
+                  value={this.state.getInput}
+                  onChange={this.getInputOnChange}
                 />
               </div>
               <button
