@@ -30,22 +30,23 @@ class Navigation extends Component {
                 Home <span className="sr-only">(current)</span>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/logout"
-                onClick={() => {
-                  this.props.signOut();
-                }}
-              >
-                Logout
-              </Link>
-            </li>
+            {this.props.GoogleAuthData
+              ? <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to="/logout"
+                    onClick={() => {
+                      this.props.signOut();
+                    }}
+                  >
+                    Logout
+                  </Link>
+                </li>
+              : <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
+                </li>}
           </ul>
         </div>
       </nav>
@@ -54,7 +55,9 @@ class Navigation extends Component {
 }
 const mapStateToProps = state => {
   console.log(state);
-  return state;
+  return {
+    GoogleAuthData: state.FetchedAuthData
+  };
 };
 export default connect(mapStateToProps, { SaveGoogleAuthData, signOut })(
   Navigation

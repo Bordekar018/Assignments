@@ -7,11 +7,11 @@ export class HomeProduct extends Component {
         <div className="row producthome">
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-2" />
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-            <div class="card text-center cardwidth">
-              <div class="card-body">
-                <h5 class="card-title">Product Name</h5>
-                <p class="card-text">Product Price</p>
-                <button class="btn btn-primary">Add To Cart</button>
+            <div className="card text-center cardwidth">
+              <div className="card-body">
+                <h5 className="card-title">Product Name</h5>
+                <p className="card-text">Product Price</p>
+                <button className="btn btn-primary">Add To Cart</button>
               </div>
             </div>
           </div>
