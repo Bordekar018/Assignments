@@ -95,7 +95,7 @@ export class CRUDProduct extends Component {
         </div>
         <div className="container">
           <div className="fetch">
-            <ProductOPR />
+            <ProductOPR firebaseData={this.props.FirebaseData} />
           </div>
         </div>
       </div>
@@ -106,7 +106,7 @@ export class CRUDProduct extends Component {
 const mapstateToprops = state => {
   console.log(state);
 
-  return state;
+  return { FirebaseData: state.FetchedFireBaseData };
 };
 export default connect(mapstateToprops, {
   addDataToDataBase,

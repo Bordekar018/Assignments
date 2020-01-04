@@ -1,6 +1,8 @@
 import React from "react";
 
-function ProductOPR() {
+function ProductOPR(props) {
+  console.log(props);
+
   return <div />;
 }
 
