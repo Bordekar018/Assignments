@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { SaveGoogleAuthData, signOut } from "../Redux/Action/ProductAction";
 class Navigation extends Component {
+  componentDidMount() {
+    this.props.SaveGoogleAuthData();
+  }
   render() {
     return (
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,7 +36,15 @@ class Navigation extends Component {
               </Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Logout</a>
+              <Link
+                class="nav-link"
+                to="/logout"
+                onClick={() => {
+                  this.props.signOut();
+                }}
+              >
+                Logout
+              </Link>
             </li>
           </ul>
         </div>
@@ -39,5 +52,10 @@ class Navigation extends Component {
     );
   }
 }
-
-export default Navigation;
+const mapStateToProps = state => {
+  console.log(state);
+  return state;
+};
+export default connect(mapStateToProps, { SaveGoogleAuthData, signOut })(
+  Navigation
+);

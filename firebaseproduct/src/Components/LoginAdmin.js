@@ -25,8 +25,4 @@ export class LoginAdmin extends Component {
   }
 }
 
-const map = state => {
-  console.log(state);
-  return state;
-};
-export default connect(map, { googleAuth })(LoginAdmin);
+export default connect(null, { googleAuth })(LoginAdmin);
