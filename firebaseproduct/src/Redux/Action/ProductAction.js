@@ -1,4 +1,4 @@
-import { database, auth, googleProvider } from "../../Firebase/Firebase";
+import { auth, googleProvider } from "../../Firebase/Firebase";
 import { history } from "../../History/History";
 
 //Authentication Action.

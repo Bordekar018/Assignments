@@ -11,9 +11,7 @@ export class HomeProduct extends Component {
               <div class="card-body">
                 <h5 class="card-title">Product Name</h5>
                 <p class="card-text">Product Price</p>
-                <a href="#" class="btn btn-primary">
-                  Add To Cart
-                </a>
+                <button class="btn btn-primary">Add To Cart</button>
               </div>
             </div>
           </div>
