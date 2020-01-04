@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addDataToDataBase } from "../Redux/Action/ProductAction";
 
 export class CRUDProduct extends Component {
   constructor(props) {
@@ -18,6 +20,15 @@ export class CRUDProduct extends Component {
   getInputPrice = e => {
     this.setState({ productPrice: e.target.value });
     console.log(e.target.value);
+  };
+
+  sendDataToFireBase = () => {
+    let data = {
+      ProductName: this.state.productName,
+      productPrice: this.state.productPrice
+    };
+    this.props.addDataToDataBase(data);
+    this.setState({ productName: "", productPrice: 0 });
   };
   render() {
     return (
@@ -64,7 +75,11 @@ export class CRUDProduct extends Component {
               />
             </div>
 
-            <button type="button" className="btn btn-info btn-default">
+            <button
+              type="button"
+              className="btn btn-info btn-default"
+              onClick={this.sendDataToFireBase}
+            >
               Add Data
             </button>
           </div>
@@ -75,4 +90,4 @@ export class CRUDProduct extends Component {
   }
 }
 
-export default CRUDProduct;
+export default connect(null, { addDataToDataBase })(CRUDProduct);

@@ -1,8 +1,7 @@
-import { auth, googleProvider } from "../../Firebase/Firebase";
+import { auth, googleProvider, database } from "../../Firebase/Firebase";
 import { history } from "../../History/History";
 
 //Authentication Action.
-
 export const googleAuth = () => {
   return async () => {
     await auth.signInWithPopup(googleProvider);
@@ -11,8 +10,7 @@ export const googleAuth = () => {
   };
 };
 
-// To Save Google Authentication Data.
-
+//To Save Google Authentication Data.
 export const SaveGoogleAuthData = () => {
   return async dispatch => {
     await auth.onAuthStateChanged(response => {
@@ -21,10 +19,18 @@ export const SaveGoogleAuthData = () => {
   };
 };
 
+//For Sign Out.
 export const signOut = () => {
   return async () => {
     await auth.signOut();
     history.push("/login");
     window.location.reload();
+  };
+};
+
+// Add Data To Firebase.
+export const addDataToDataBase = DataFromInput => {
+  return async () => {
+    await database.push(DataFromInput);
   };
 };
