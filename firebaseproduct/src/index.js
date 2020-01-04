@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import "./ComponentCSS/AdminPanel.css";
+import "./ComponentCSS/Login.css";
+import "./ComponentCSS/CRUDProduct.css";
 import * as serviceWorker from "./serviceWorker";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
