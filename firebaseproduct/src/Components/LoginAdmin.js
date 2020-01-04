@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { googleAuth } from "../Redux/Action/ProductAction";
+import { connect } from "react-redux";
 
 export class LoginAdmin extends Component {
   render() {
@@ -8,7 +10,11 @@ export class LoginAdmin extends Component {
           <div className="card">
             <h5 className="card-header">Login With Google</h5>
             <div className="card-body">
-              <button type="button" className="btn btn-primary">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={this.props.googleAuth}
+              >
                 Login
               </button>
             </div>
@@ -19,4 +25,8 @@ export class LoginAdmin extends Component {
   }
 }
 
-export default LoginAdmin;
+const map = state => {
+  console.log(state);
+  return state;
+};
+export default connect(map, { googleAuth })(LoginAdmin);

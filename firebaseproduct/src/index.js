@@ -6,13 +6,17 @@ import "./ComponentCSS/AdminPanel.css";
 import "./ComponentCSS/Login.css";
 import "./ComponentCSS/CRUDProduct.css";
 import * as serviceWorker from "./serviceWorker";
+import store from "./Redux/Store/ReduxStore";
 import { BrowserRouter as Router } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
 

@@ -14,10 +14,8 @@ function App() {
       <Navigation />
       <React.Fragment>
         <Route path="/" exact component={Home} />
-        <Route path="/home" exact component={Home} />
+        <Route path="/home" component={Home} />
         <Route path="/login" component={LoginAdmin} />
-
-        <HomeProduct />
       </React.Fragment>
     </div>
   );
