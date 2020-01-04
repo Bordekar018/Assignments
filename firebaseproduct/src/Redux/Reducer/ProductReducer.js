@@ -7,3 +7,13 @@ export const FetchAuthReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export const FetchFireBaseDataReducer = (state = {}, action) => {
+  switch (action.type) {
+    case "Fetch_Data":
+      return action.payload;
+
+    default:
+      return state;
+  }
+};

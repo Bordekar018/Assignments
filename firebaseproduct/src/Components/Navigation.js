@@ -54,7 +54,7 @@ class Navigation extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state);
+  //console.log(state)
   return {
     GoogleAuthData: state.FetchedAuthData
   };

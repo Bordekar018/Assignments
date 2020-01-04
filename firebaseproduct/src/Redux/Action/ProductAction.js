@@ -1,5 +1,6 @@
 import { auth, googleProvider, database } from "../../Firebase/Firebase";
 import { history } from "../../History/History";
+import { connect } from "react-redux";
 
 //Authentication Action.
 export const googleAuth = () => {
@@ -32,5 +33,16 @@ export const signOut = () => {
 export const addDataToDataBase = DataFromInput => {
   return async () => {
     await database.push(DataFromInput);
+  };
+};
+
+//Fetch FireBase Data
+
+export const FetchFirebaseData = () => {
+  return async dispatch => {
+    await database.on("value", data => {
+      let FireBaseData = data.val();
+      dispatch({ type: "Fetch_Data", payload: FireBaseData });
+    });
   };
 };

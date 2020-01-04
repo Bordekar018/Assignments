@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addDataToDataBase } from "../Redux/Action/ProductAction";
+import {
+  addDataToDataBase,
+  FetchFirebaseData
+} from "../Redux/Action/ProductAction";
+import ProductOPR from "./ProductOPR";
 
 export class CRUDProduct extends Component {
   constructor(props) {
@@ -30,6 +34,10 @@ export class CRUDProduct extends Component {
     this.props.addDataToDataBase(data);
     this.setState({ productName: "", productPrice: 0 });
   };
+
+  componentDidMount() {
+    this.props.FetchFirebaseData();
+  }
   render() {
     return (
       <div className="container-fluid">
@@ -85,9 +93,22 @@ export class CRUDProduct extends Component {
           </div>
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-2" />
         </div>
+        <div className="container">
+          <div className="fetch">
+            <ProductOPR />
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-export default connect(null, { addDataToDataBase })(CRUDProduct);
+const mapstateToprops = state => {
+  console.log(state);
+
+  return state;
+};
+export default connect(mapstateToprops, {
+  addDataToDataBase,
+  FetchFirebaseData
+})(CRUDProduct);
