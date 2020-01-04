@@ -1,6 +1,5 @@
 import { auth, googleProvider, database } from "../../Firebase/Firebase";
 import { history } from "../../History/History";
-import { connect } from "react-redux";
 
 //Authentication Action.
 export const googleAuth = () => {
