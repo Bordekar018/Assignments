@@ -6,7 +6,7 @@ import { history } from "../../History/History";
 export const googleAuth = () => {
   return async () => {
     await auth.signInWithPopup(googleProvider);
-    history.push("/home");
+    history.push("/Product");
     window.location.reload();
   };
 };

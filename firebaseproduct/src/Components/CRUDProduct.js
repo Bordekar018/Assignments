@@ -1,6 +1,24 @@
 import React, { Component } from "react";
 
 export class CRUDProduct extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      productName: "",
+      productPrice: 0
+    };
+  }
+
+  getInputName = e => {
+    this.setState({ productName: e.target.value });
+    console.log(e.target.value);
+  };
+
+  getInputPrice = e => {
+    this.setState({ productPrice: e.target.value });
+    console.log(e.target.value);
+  };
   render() {
     return (
       <div className="container-fluid">
@@ -22,6 +40,8 @@ export class CRUDProduct extends Component {
                 className="form-control"
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
+                value={this.state.productName}
+                onChange={this.getInputName}
               />
             </div>
             <div className="input-group mb-3">
@@ -34,11 +54,13 @@ export class CRUDProduct extends Component {
                 </span>
               </div>
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 name="proprice" //Important For getInput.
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
+                value={this.state.productPrice}
+                onChange={this.getInputPrice}
               />
             </div>
 
