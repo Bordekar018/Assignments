@@ -46,6 +46,15 @@ export const FetchFirebaseData = () => {
   };
 };
 
+//Update Firebase Data.
+export const UpdateDataFirebase = (id, data) => {
+  return async () => {
+    await database.child(id).update(data);
+    history.push("/Product");
+    window.location.reload();
+  };
+};
+
 //Remove Firebase Data
 
 export const RemoveFirebaseData = id => {
