@@ -45,3 +45,11 @@ export const FetchFirebaseData = () => {
     });
   };
 };
+
+//Remove Firebase Data
+
+export const RemoveFirebaseData = id => {
+  return async () => {
+    await database.child(id).remove();
+  };
+};

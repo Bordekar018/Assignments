@@ -1,6 +1,9 @@
 import React from "react";
 import _ from "lodash";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+
+import { RemoveFirebaseData } from "../Redux/Action/ProductAction";
 
 function ProductOPR(props) {
   console.log(props);
@@ -16,7 +19,11 @@ function ProductOPR(props) {
             <p className="card-text">
               {value.productPrice}
             </p>
-            <button type="button" className="btn btn-danger">
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={() => props.RemoveFirebaseData(key)}
+            >
               Remove
             </button>
             <button
@@ -24,7 +31,9 @@ function ProductOPR(props) {
               className="btn btn-danger"
               style={{ marginLeft: "10px" }}
             >
-              {/* <Link style={{ color: "white" }}>Update</Link> */}
+              <Link to={`/updateproduct/${key}`} style={{ color: "white" }}>
+                Update
+              </Link>
             </button>
           </div>
         </div>
@@ -33,4 +42,4 @@ function ProductOPR(props) {
   );
 }
 
-export default ProductOPR;
+export default connect(null, { RemoveFirebaseData })(ProductOPR);

@@ -7,6 +7,7 @@ import LoginAdmin from "./Components/LoginAdmin";
 
 import Home from "./Components/Home";
 import CRUDProduct from "./Components/CRUDProduct";
+import UpdateProduct from "./Components/UpdateProduct";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/login" component={LoginAdmin} />
         <Route path="/Product" component={CRUDProduct} />
+        <Route path="/updateproduct" component={UpdateProduct} />
       </React.Fragment>
     </div>
   );
