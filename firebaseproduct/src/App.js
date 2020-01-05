@@ -18,7 +18,7 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/login" component={LoginAdmin} />
         <Route path="/Product" component={CRUDProduct} />
-        <Route path="/updateproduct" component={UpdateProduct} />
+        <Route path="/updateproduct/:id" component={UpdateProduct} />
       </React.Fragment>
     </div>
   );

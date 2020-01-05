@@ -1,8 +1,36 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { UpdateDataFirebase } from "../Redux/Action/ProductAction";
 
 class UpdateProduct extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      productName: this.props.updateDataItem.productName,
+      productPrice: this.props.updateDataItem.productPrice
+    };
+  }
+
+  getInputName = e => {
+    this.setState({ productName: e.target.value });
+  };
+
+  getInputPrice = e => {
+    this.setState({ productPrice: e.target.value });
+  };
+
+  sendDataToFireBase = e => {
+    e.preventDefault();
+    let data = {
+      productName: this.state.productName,
+      productPrice: this.state.productPrice
+    };
+    this.props.UpdateDataFirebase(this.props.match.params.id, data);
+  };
   render() {
+    if (!this.props.updateDataItem) {
+      return null;
+    }
     return (
       <div className="container-fluid">
         <div className="row crudProduct">
@@ -23,8 +51,8 @@ class UpdateProduct extends Component {
                 className="form-control"
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
-                // value={this.state.productName}
-                // onChange={this.getInputName}
+                value={this.state.productName}
+                onChange={this.getInputName}
               />
             </div>
             <div className="input-group mb-3">
@@ -42,15 +70,15 @@ class UpdateProduct extends Component {
                 name="proprice" //Important For getInput.
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
-                // value={this.state.productPrice}
-                // onChange={this.getInputPrice}
+                value={this.state.productPrice}
+                onChange={this.getInputPrice}
               />
             </div>
 
             <button
               type="button"
               className="btn btn-info btn-default"
-              //   onClick={this.sendDataToFireBase}
+              onClick={this.sendDataToFireBase}
             >
               Update
             </button>
@@ -66,6 +94,8 @@ const mapStateToProps = (state, ownProps) => {
   console.log(state);
   console.log(ownProps);
 
-  return state;
+  return {
+    updateDataItem: state.FetchedFireBaseData[ownProps.match.params.id]
+  };
 };
-export default connect(mapStateToProps)(UpdateProduct);
+export default connect(mapStateToProps, { UpdateDataFirebase })(UpdateProduct);
