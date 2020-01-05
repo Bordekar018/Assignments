@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import HomeProduct from "./HomeProduct";
 
-export class Home extends Component {
+class Home extends Component {
   render() {
     return <HomeProduct />;
   }
