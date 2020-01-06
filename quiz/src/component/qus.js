@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { SurveyAction } from "../Redux/Action/SurveyAction";
 import { Link } from "react-router-dom";
-import Axios from "axios";
 
-export class Questions extends Component {
+class Qus extends Component {
   constructor() {
     super();
     this.state = {
@@ -14,6 +11,7 @@ export class Questions extends Component {
       switch: true
     };
   }
+
   componentDidMount() {
     fetch(`https://www.mocky.io/v2/56fcf6871000000e13aed252`)
       .then(response => response.json())
@@ -31,10 +29,8 @@ export class Questions extends Component {
 
     // console.log(this.state.console1,"here th mian data",this.state.first)
   };
+
   render() {
-    if (!this.props.Question) {
-      return null;
-    }
     if (this.state.switch === true) {
       return (
         <div className="text-center switch " style={{ marginTop: "150px" }}>
@@ -84,13 +80,4 @@ export class Questions extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  let a = state.SurveyQuestion.slice(0, 10);
-  let b = a.map(data => data);
-  console.log(b);
-
-  return {
-    Question: state.SurveyQuestion.slice(0, 10)
-  };
-};
-export default connect(mapStateToProps, { SurveyAction })(Questions);
+export default Qus;

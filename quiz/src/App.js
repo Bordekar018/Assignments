@@ -1,19 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Qus from "./component/qus";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
-import StartSurvey from "./Components/StartSurvey";
-import Questions from "./Components/Questions";
+import { Switch, Route, Link } from "react-router-dom";
+import Nav from "./component/nav";
 
-function App() {
-  return (
-    <div className="container">
-      <Switch>
-        <Route path="/" exact component={StartSurvey} />
-        <Route path="/home" exact component={StartSurvey} />
-        <Route path="/Question" exact component={Questions} />
-      </Switch>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Switch>
+          <Route exact path="/" component={Nav} />
+          <Route path="/Qus" component={Qus} />
+        </Switch>
+
+        <div />
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
