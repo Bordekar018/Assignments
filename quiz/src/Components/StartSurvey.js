@@ -12,7 +12,7 @@ class StartSurvey extends Component {
     window.location.reload();
   };
   render() {
-    if (!this.props.a) {
+    if (!this.props.Question) {
       return null;
     }
     return (
@@ -26,7 +26,7 @@ class StartSurvey extends Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    a: state
+    Question: state.SurveyQuestion.slice(0, 10)
   };
 };
 export default connect(mapStateToProps, { SurveyAction })(StartSurvey);
