@@ -29,9 +29,13 @@ class Qus extends Component {
   };
 
   prev = () => {
-    this.setState({ switch: false });
-    this.setState({ console1: this.state.data[this.state.first - 1] });
-    this.setState({ first: this.state.first - 1 });
+    if (this.state.first > 0) {
+      this.setState({ switch: false });
+      this.setState({ console1: this.state.data[this.state.first - 1] });
+      this.setState({ first: this.state.first - 1 });
+    } else {
+      alert("This Is First Question");
+    }
   };
 
   render() {
@@ -51,7 +55,7 @@ class Qus extends Component {
         </div>
       );
     } else {
-      if (this.state.first < 6) {
+      if (this.state.first < 8) {
         return (
           <div className="App container">
             <button
