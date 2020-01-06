@@ -28,9 +28,14 @@ class Qus extends Component {
     this.setState({ first: this.state.first + 1 });
   };
 
+  prev = () => {
+    this.setState({ switch: false });
+    this.setState({ console1: this.state.data[this.state.first - 1] });
+    this.setState({ first: this.state.first - 1 });
+  };
+
   render() {
     console.log(this.state.data);
-    console.log(this.state.console1);
 
     if (this.state.switch === true) {
       return (
@@ -52,10 +57,18 @@ class Qus extends Component {
             <button
               type="button"
               className="btn btn-danger mt-5 btn-lg pl-4 pr-4 pt-2 pb-2"
+              onClick={this.prev}
+            >
+              Pre Qus
+            </button>
+            <button
+              type="button"
+              className="btn btn-danger mt-5 btn-lg pl-4 pr-4 pt-2 pb-2"
               onClick={this.onClickMethod}
             >
               Next Qus
             </button>
+
             <h1
               className="mt-5"
               style={{ color: "gray", backgroundColor: "White" }}
