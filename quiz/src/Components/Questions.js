@@ -32,9 +32,9 @@ export class Questions extends Component {
             <button
               type="button"
               className="btn btn-danger mt-5 btn-lg pl-4 pr-4 pt-2 pb-2"
-              // onClick={this.onClickMethod}
+              onClick={this.nextQues}
             >
-              Next Qus
+              Next
             </button>
           </React.Fragment>
         )}
