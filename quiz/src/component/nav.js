@@ -12,7 +12,7 @@ class Nav extends Component {
           style={{ textAlign: "center", marginTop: "200px" }}
         >
           <Link to="/Qus" className="btn btn-dark atag mx-auto">
-            {" "}Start the Survey
+            Start the Survey
           </Link>
         </div>
       </React.Fragment>

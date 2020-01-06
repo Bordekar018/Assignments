@@ -69,8 +69,8 @@ class Qus extends Component {
       } else {
         return (
           <div style={{ textAlign: "center", marginTop: "150px" }}>
-            {" "}<Link to="/" className="btn btn-success btn-lg" type="submit">
-              {" "}Submit the Survey
+            <Link to="/" className="btn btn-success btn-lg" type="submit">
+              Submit the Survey
             </Link>
             <p>Thank you</p>
           </div>
