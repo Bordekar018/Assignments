@@ -26,8 +26,6 @@ class Qus extends Component {
     this.setState({ switch: false });
     this.setState({ console1: this.state.data[this.state.first] });
     this.setState({ first: this.state.first + 1 });
-
-    // console.log(this.state.console1,"here th mian data",this.state.first)
   };
 
   render() {
