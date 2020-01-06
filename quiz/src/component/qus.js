@@ -31,6 +31,9 @@ class Qus extends Component {
   };
 
   render() {
+    console.log(this.state.data);
+    console.log(this.state.console1);
+
     if (this.state.switch === true) {
       return (
         <div className="text-center switch " style={{ marginTop: "150px" }}>
