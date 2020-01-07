@@ -11,16 +11,17 @@ export class TakeaSurvey extends Component {
 
     return (
       <React.Fragment>
-        <div className="container">
-          <div className="loginContainer aa">
-            <button
-              type="button"
-              className="btn btn-primary btn-lg"
-              onClick={this.routeToQuestion}
-              style={{ marginLeft: "450px" }}
-            >
-              Start the survey
-            </button>
+        <div className="img">
+          <div className="container">
+            <div className="btnarea">
+              <button
+                type="button"
+                className="btn btn-dark btn-lg"
+                onClick={this.routeToQuestion}
+              >
+                Start the survey
+              </button>
+            </div>
           </div>
         </div>
       </React.Fragment>

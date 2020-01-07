@@ -3,13 +3,13 @@
   min-height: 90vh;
   background-size: 100% 100%;
 }
-.loginContainer {
-  margin-top: 50px;
-  padding: 50px 20px;
-  border-radius: 19px 19px 19px 19px;
-  -moz-border-radius: 19px 19px 19px 19px;
-  -webkit-border-radius: 19px 19px 19px 19px;
-  border: 7px solid #565656;
 
-  /*Transperent Card Because, didn't apply any color property */
+.img {
+  background: url('../Uploads/a.png');
+  min-height: 100vh;
+  background-size: 100% 100%;
+}
+.btnarea {
+  padding-top: 50px;
+  padding-left: 450px;
 }
