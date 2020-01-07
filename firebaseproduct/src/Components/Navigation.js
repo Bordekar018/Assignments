@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+
 import { SaveGoogleAuthData, signOut } from "../Redux/Action/ProductAction";
 class Navigation extends Component {
   componentDidMount() {
@@ -31,17 +32,25 @@ class Navigation extends Component {
               </Link>
             </li>
             {this.props.GoogleAuthData
-              ? <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to="/logout"
-                    onClick={() => {
-                      this.props.signOut();
-                    }}
-                  >
-                    Logout
-                  </Link>
-                </li>
+              ? <React.Fragment>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="/logout"
+                      onClick={() => {
+                        this.props.signOut();
+                      }}
+                    >
+                      Logout
+                    </Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/Product">
+                      Admin Panel
+                    </Link>
+                  </li>
+                </React.Fragment>
               : <li className="nav-item">
                   <Link className="nav-link" to="/login">
                     Login
