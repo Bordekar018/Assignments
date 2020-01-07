@@ -18,17 +18,24 @@ export class Questions extends Component {
     window.location.reload();
   };
   render() {
-    console.log(this.props);
+    //console.log(this.props)
     if (this.state.arrayToStoredata < 11) {
       return this.props.QuestionData.map(data => {
-        if (this.state.arrayToStoredata == data.id) {
+        if (this.state.arrayToStoredata === data.id) {
           return (
-            <React.Fragment>
+            <React.Fragment key={data.id}>
               <h1>
-                {console.log(typeof this.state.arrayToStoredata)}
+                {/* {console.log(typeof this.state.arrayToStoredata)} */}
                 {data.title}
               </h1>
-              <button type="button" class="btn btn-primary" onClick={this.next}>
+              <p>
+                {data.description}
+              </p>
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={this.next}
+              >
                 next
               </button>
             </React.Fragment>
@@ -37,7 +44,7 @@ export class Questions extends Component {
       });
     } else {
       return (
-        <button type="button" class="btn btn-primary" onClick={this.submit}>
+        <button type="button" className="btn btn-primary" onClick={this.submit}>
           Submit
         </button>
       );

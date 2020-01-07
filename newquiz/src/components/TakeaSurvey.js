@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { history } from "../History/history";
-import Questions from "./Questions";
 
 export class TakeaSurvey extends Component {
   routeToQuestion = () => {
@@ -8,7 +7,7 @@ export class TakeaSurvey extends Component {
     window.location.reload();
   };
   render() {
-    console.log(this.props);
+    //console.log(this.props)
 
     return (
       <React.Fragment>
