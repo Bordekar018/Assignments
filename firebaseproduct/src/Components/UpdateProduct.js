@@ -6,13 +6,13 @@ class UpdateProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productName: this.props.updateDataItem.productName,
+      ProductName: this.props.updateDataItem.ProductName,
       productPrice: this.props.updateDataItem.productPrice
     };
   }
 
   getInputName = e => {
-    this.setState({ productName: e.target.value });
+    this.setState({ ProductName: e.target.value });
   };
 
   getInputPrice = e => {
@@ -22,7 +22,7 @@ class UpdateProduct extends Component {
   sendDataToFireBase = e => {
     e.preventDefault();
     let data = {
-      productName: this.state.productName,
+      ProductName: this.state.ProductName,
       productPrice: this.state.productPrice
     };
     this.props.UpdateDataFirebase(this.props.match.params.id, data);
@@ -51,7 +51,7 @@ class UpdateProduct extends Component {
                 className="form-control"
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
-                value={this.state.productName}
+                value={this.state.ProductName}
                 onChange={this.getInputName}
               />
             </div>
