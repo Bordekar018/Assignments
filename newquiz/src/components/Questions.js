@@ -55,7 +55,7 @@ export class Questions extends Component {
           return (
             <React.Fragment key={data.id}>
               <div className="BG">
-                <div className="container">
+                <div className="container" style={{ paddingTop: "40px" }}>
                   <h1>
                     {/* {console.log(typeof this.state.arrayToStoredata)} */}
                     {data.title}

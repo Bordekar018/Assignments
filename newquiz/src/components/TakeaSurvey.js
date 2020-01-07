@@ -10,16 +10,20 @@ export class TakeaSurvey extends Component {
     //console.log(this.props)
 
     return (
-      <div className="container">
-        <button
-          type="button"
-          className="btn btn-primary btn-lg"
-          onClick={this.routeToQuestion}
-          style={{ marginTop: "100px", marginLeft: "500px" }}
-        >
-          Start the survey
-        </button>
-      </div>
+      <React.Fragment>
+        <div className="container">
+          <div className="loginContainer aa">
+            <button
+              type="button"
+              className="btn btn-primary btn-lg"
+              onClick={this.routeToQuestion}
+              style={{ marginLeft: "450px" }}
+            >
+              Start the survey
+            </button>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }
