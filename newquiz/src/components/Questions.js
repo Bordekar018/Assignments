@@ -4,13 +4,19 @@ export class Questions extends Component {
   constructor(props) {
     super(props);
   }
-
+  next = (datakey, key) => {
+    if (key == datakey) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   render() {
     console.log(this.props);
 
     return (
       <React.Fragment>
-        {this.props.QuestionData.map(data =>
+        {this.props.QuestionData.map((data, key) =>
           <React.Fragment key={data.id}>
             <h1>
               {data.title}
@@ -18,6 +24,13 @@ export class Questions extends Component {
             <p>
               {data.description}
             </p>
+            <button
+              onClick={() => {
+                this.next(data.id, key);
+              }}
+            >
+              Next
+            </button>
             <hr />
           </React.Fragment>
         )}
