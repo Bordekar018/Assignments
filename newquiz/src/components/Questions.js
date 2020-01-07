@@ -19,35 +19,58 @@ export class Questions extends Component {
   };
   render() {
     //console.log(this.props)
-    if (this.state.arrayToStoredata < 11) {
+    if (this.state.arrayToStoredata < 10) {
       return this.props.QuestionData.map(data => {
         if (this.state.arrayToStoredata === data.id) {
           return (
             <React.Fragment key={data.id}>
-              <h1>
-                {/* {console.log(typeof this.state.arrayToStoredata)} */}
-                {data.title}
-              </h1>
-              <p>
-                {data.description}
-              </p>
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={this.next}
-              >
-                next
-              </button>
+              <div className="container">
+                <h1>
+                  {/* {console.log(typeof this.state.arrayToStoredata)} */}
+                  {data.title}
+                </h1>
+                <p>
+                  {data.description}
+                </p>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={this.next}
+                >
+                  Next Question
+                </button>
+              </div>
             </React.Fragment>
           );
         }
       });
     } else {
-      return (
-        <button type="button" className="btn btn-primary" onClick={this.submit}>
-          Submit
-        </button>
-      );
+      return this.props.QuestionData.map(data => {
+        if (this.state.arrayToStoredata === 10 && data.id === 10) {
+          return (
+            <React.Fragment key={data.id}>
+              <div className="container">
+                <h1>
+                  {/* {console.log(typeof this.state.arrayToStoredata)} */}
+                  {data.title}
+                </h1>
+                <p>
+                  {data.description}
+                </p>
+
+                <button
+                  type="button"
+                  className="btn btn-primary btn-lg"
+                  onClick={this.submit}
+                  style={{ marginTop: "100px", marginLeft: "500px" }}
+                >
+                  Submit
+                </button>
+              </div>
+            </React.Fragment>
+          );
+        }
+      });
     }
   }
 }
