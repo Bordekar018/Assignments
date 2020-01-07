@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class Qus extends Component {
   constructor() {
@@ -12,14 +13,11 @@ class Qus extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(`https://www.mocky.io/v2/56fcf6871000000e13aed252`)
-      .then(response => response.json())
-      .then(info => {
-        this.setState({ data: info.slice(0, 7) }, () => {
-          console.log(this.state.data);
-        });
-      });
+  async componentDidMount() {
+    let data1 = await axios.get(
+      `https://www.mocky.io/v2/56fcf6871000000e13aed252`
+    );
+    this.setState({ data: data1.data.slice(0, 7) });
   }
 
   onClickMethod = () => {
@@ -42,18 +40,24 @@ class Qus extends Component {
     console.log(this.state.data);
 
     if (this.state.switch === true) {
-      return (
-        <div className="text-center switch " style={{ marginTop: "150px" }}>
-          <button
-            type="button"
-            className="btn btn-primary  pb-4 mt-5 btn-lg "
-            style={{ height: "60px", width: "200px", fontSize: "38px" }}
-            onClick={this.onClickMethod}
-          >
-            Ready
-          </button>
-        </div>
-      );
+      if (this.state.data.length > 0) {
+        return (
+          <div className="text-center switch " style={{ marginTop: "150px" }}>
+            <button
+              type="button"
+              className="btn btn-primary  pb-4 mt-5 btn-lg "
+              style={{ height: "60px", width: "200px", fontSize: "38px" }}
+              onClick={this.onClickMethod}
+            >
+              Ready
+            </button>
+          </div>
+        );
+      } else {
+        return (
+          <h1 style={{ textAlign: "center", marginTop: "150px" }}>Loading</h1>
+        );
+      }
     } else {
       if (this.state.first < 8) {
         return (
