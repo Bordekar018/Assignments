@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { history } from "../History/history";
 
 export class Questions extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ export class Questions extends Component {
   };
   submit = () => {
     alert("Thank You");
+    history.push("/Survey");
+    window.location.reload();
   };
   render() {
     console.log(this.props);
@@ -39,23 +42,6 @@ export class Questions extends Component {
         </button>
       );
     }
-    // return (
-    //   <React.Fragment>
-    //     {this.props.QuestionData.map((data, key) =>
-    //       <React.Fragment key={data.id}>
-    //         <h1>
-    //           {console.log(this.state.arrayToStoredata)}
-    //           {data.title}
-    //         </h1>
-    //         <p>
-    //           {data.description}
-    //         </p>
-    //         <button>Next</button>
-    //         <hr />
-    //       </React.Fragment>
-    //     )}
-    //   </React.Fragment>
-    // );
   }
 }
 
