@@ -27,14 +27,13 @@ export class App extends Component {
     return (
       <React.Fragment>
         <Switch>
-          <Route
-            path="/"
-            exact
-            component={TakeaSurvey}
-            QuestionData={this.state}
-          />
+          <Route path="/" exact component={TakeaSurvey} />
           <Route path="/Survey" exact component={TakeaSurvey} />
-          <Route path="/Question" component={Questions} />
+          <Route
+            path="/Question"
+            component={() =>
+              <Questions QuestionData={this.state.QuestionData} />}
+          />
         </Switch>
       </React.Fragment>
     );
