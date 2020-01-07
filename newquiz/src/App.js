@@ -22,7 +22,7 @@ export class App extends Component {
   }
 
   render() {
-    //console.log(this.state.QuestionData)
+    //console.log(this.state.QuestionData);
 
     return (
       <React.Fragment>

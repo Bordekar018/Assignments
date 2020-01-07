@@ -6,17 +6,20 @@ export class Questions extends Component {
     super(props);
 
     this.state = {
-      arrayToStoredata: 1
+      arrayToStoredata: 1 //Took arrayToStoredata 1 because Fetched Data "id" starts from 1
     };
   }
+
   next = () => {
     this.setState({ arrayToStoredata: this.state.arrayToStoredata + 1 });
   };
+
   submit = () => {
     alert("Thank You");
     history.push("/Survey");
     window.location.reload();
   };
+
   render() {
     //console.log(this.props)
     if (this.state.arrayToStoredata < 10) {
@@ -24,7 +27,10 @@ export class Questions extends Component {
         if (this.state.arrayToStoredata === data.id) {
           return (
             <React.Fragment key={data.id}>
-              <div className="container">
+              <div
+                className="container"
+                style={{ paddingTop: "40px", color: "white" }}
+              >
                 <h1>
                   {/* {console.log(typeof this.state.arrayToStoredata)} */}
                   {data.title}
