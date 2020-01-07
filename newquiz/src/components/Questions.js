@@ -27,24 +27,23 @@ export class Questions extends Component {
         if (this.state.arrayToStoredata === data.id) {
           return (
             <React.Fragment key={data.id}>
-              <div
-                className="container"
-                style={{ paddingTop: "40px", color: "white" }}
-              >
-                <h1>
-                  {/* {console.log(typeof this.state.arrayToStoredata)} */}
-                  {data.title}
-                </h1>
-                <p>
-                  {data.description}
-                </p>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={this.next}
-                >
-                  Next Question
-                </button>
+              <div className="BG">
+                <div className="container" style={{ paddingTop: "40px" }}>
+                  <h1>
+                    {/* {console.log(typeof this.state.arrayToStoredata)} */}
+                    {data.title}
+                  </h1>
+                  <p>
+                    {data.description}
+                  </p>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={this.next}
+                  >
+                    Next Question
+                  </button>
+                </div>
               </div>
             </React.Fragment>
           );
@@ -55,23 +54,25 @@ export class Questions extends Component {
         if (this.state.arrayToStoredata === 10 && data.id === 10) {
           return (
             <React.Fragment key={data.id}>
-              <div className="container">
-                <h1>
-                  {/* {console.log(typeof this.state.arrayToStoredata)} */}
-                  {data.title}
-                </h1>
-                <p>
-                  {data.description}
-                </p>
+              <div className="BG">
+                <div className="container">
+                  <h1>
+                    {/* {console.log(typeof this.state.arrayToStoredata)} */}
+                    {data.title}
+                  </h1>
+                  <p>
+                    {data.description}
+                  </p>
 
-                <button
-                  type="button"
-                  className="btn btn-primary btn-lg"
-                  onClick={this.submit}
-                  style={{ marginTop: "100px", marginLeft: "500px" }}
-                >
-                  Submit
-                </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary btn-lg"
+                    onClick={this.submit}
+                    style={{ marginTop: "100px", marginLeft: "500px" }}
+                  >
+                    Submit
+                  </button>
+                </div>
               </div>
             </React.Fragment>
           );
